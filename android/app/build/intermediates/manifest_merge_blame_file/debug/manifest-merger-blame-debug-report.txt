@@ -9,20 +9,20 @@
 9        android:targetSdkVersion="33" />
 10
 11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-11-->C:\Users\tho38\Worm\android\app\src\debug\AndroidManifest.xml:5:5-77
-11-->C:\Users\tho38\Worm\android\app\src\debug\AndroidManifest.xml:5:22-75
+11-->C:\Users\tho38\Desktop\Wood\android\app\src\debug\AndroidManifest.xml:5:5-77
+11-->C:\Users\tho38\Desktop\Wood\android\app\src\debug\AndroidManifest.xml:5:22-75
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->C:\Users\tho38\Worm\android\app\src\main\AndroidManifest.xml:3:5-67
-12-->C:\Users\tho38\Worm\android\app\src\main\AndroidManifest.xml:3:22-64
+12-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:3:5-67
+12-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:3:22-64
 13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 13-->[com.facebook.flipper:flipper:0.182.0] C:\Users\tho38\.gradle\caches\transforms-3\bd18304b20e6fdaf3e3425e5d35bd51e\transformed\jetified-flipper-0.182.0\AndroidManifest.xml:16:5-76
 13-->[com.facebook.flipper:flipper:0.182.0] C:\Users\tho38\.gradle\caches\transforms-3\bd18304b20e6fdaf3e3425e5d35bd51e\transformed\jetified-flipper-0.182.0\AndroidManifest.xml:16:22-73
 14    <uses-permission android:name="android.permission.WAKE_LOCK" />
-14-->[:react-native-track-player] C:\Users\tho38\Worm\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-68
-14-->[:react-native-track-player] C:\Users\tho38\Worm\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:7:22-65
+14-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-68
+14-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:7:22-65
 15    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-15-->[:react-native-track-player] C:\Users\tho38\Worm\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-77
-15-->[:react-native-track-player] C:\Users\tho38\Worm\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:22-74
+15-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-77
+15-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:22-74
 16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 16-->[com.google.android.exoplayer:exoplayer-core:2.18.1] C:\Users\tho38\.gradle\caches\transforms-3\cb372dc11704a3ffd0cca9e6459034a9\transformed\jetified-exoplayer-core-2.18.1\AndroidManifest.xml:24:5-79
 16-->[com.google.android.exoplayer:exoplayer-core:2.18.1] C:\Users\tho38\.gradle\caches\transforms-3\cb372dc11704a3ffd0cca9e6459034a9\transformed\jetified-exoplayer-core-2.18.1\AndroidManifest.xml:24:22-76
@@ -52,81 +52,81 @@
 28    </queries>
 29
 30    <application
-30-->C:\Users\tho38\Worm\android\app\src\main\AndroidManifest.xml:5:5-24:19
+30-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:5:5-24:19
 31        android:name="com.worm.MainApplication"
-31-->C:\Users\tho38\Worm\android\app\src\main\AndroidManifest.xml:6:7-38
+31-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:6:7-38
 32        android:allowBackup="false"
-32-->C:\Users\tho38\Worm\android\app\src\main\AndroidManifest.xml:10:7-34
+32-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:10:7-34
 33        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 33-->[androidx.core:core:1.9.0] C:\Users\tho38\.gradle\caches\transforms-3\0d9081b1defcfc12625845badd9b93a6\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 34        android:debuggable="true"
 35        android:icon="@mipmap/ic_launcher"
-35-->C:\Users\tho38\Worm\android\app\src\main\AndroidManifest.xml:8:7-41
+35-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:8:7-41
 36        android:label="@string/app_name"
-36-->C:\Users\tho38\Worm\android\app\src\main\AndroidManifest.xml:7:7-39
+36-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:7:7-39
 37        android:roundIcon="@mipmap/ic_launcher_round"
-37-->C:\Users\tho38\Worm\android\app\src\main\AndroidManifest.xml:9:7-52
+37-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:9:7-52
 38        android:theme="@style/AppTheme"
-38-->C:\Users\tho38\Worm\android\app\src\main\AndroidManifest.xml:11:7-38
+38-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:11:7-38
 39        android:usesCleartextTraffic="true" >
-39-->C:\Users\tho38\Worm\android\app\src\debug\AndroidManifest.xml:8:9-44
+39-->C:\Users\tho38\Desktop\Wood\android\app\src\debug\AndroidManifest.xml:8:9-44
 40        <activity
-40-->C:\Users\tho38\Worm\android\app\src\debug\AndroidManifest.xml:11:9-111
+40-->C:\Users\tho38\Desktop\Wood\android\app\src\debug\AndroidManifest.xml:11:9-111
 41            android:name="com.facebook.react.devsupport.DevSettingsActivity"
-41-->C:\Users\tho38\Worm\android\app\src\debug\AndroidManifest.xml:11:19-83
+41-->C:\Users\tho38\Desktop\Wood\android\app\src\debug\AndroidManifest.xml:11:19-83
 42            android:exported="false" />
-42-->C:\Users\tho38\Worm\android\app\src\debug\AndroidManifest.xml:11:84-108
+42-->C:\Users\tho38\Desktop\Wood\android\app\src\debug\AndroidManifest.xml:11:84-108
 43        <activity
-43-->C:\Users\tho38\Worm\android\app\src\main\AndroidManifest.xml:12:7-23:18
+43-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:12:7-23:18
 44            android:name="com.worm.MainActivity"
-44-->C:\Users\tho38\Worm\android\app\src\main\AndroidManifest.xml:13:9-37
+44-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:13:9-37
 45            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-45-->C:\Users\tho38\Worm\android\app\src\main\AndroidManifest.xml:15:9-118
+45-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:15:9-118
 46            android:exported="true"
-46-->C:\Users\tho38\Worm\android\app\src\main\AndroidManifest.xml:18:9-32
+46-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:18:9-32
 47            android:label="@string/app_name"
-47-->C:\Users\tho38\Worm\android\app\src\main\AndroidManifest.xml:14:9-41
+47-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:14:9-41
 48            android:launchMode="singleTask"
-48-->C:\Users\tho38\Worm\android\app\src\main\AndroidManifest.xml:16:9-40
+48-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:16:9-40
 49            android:windowSoftInputMode="adjustResize" >
-49-->C:\Users\tho38\Worm\android\app\src\main\AndroidManifest.xml:17:9-51
+49-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:17:9-51
 50            <intent-filter>
-50-->C:\Users\tho38\Worm\android\app\src\main\AndroidManifest.xml:19:9-22:25
+50-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:19:9-22:25
 51                <action android:name="android.intent.action.MAIN" />
-51-->C:\Users\tho38\Worm\android\app\src\main\AndroidManifest.xml:20:13-65
-51-->C:\Users\tho38\Worm\android\app\src\main\AndroidManifest.xml:20:21-62
+51-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:20:13-65
+51-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:20:21-62
 52
 53                <category android:name="android.intent.category.LAUNCHER" />
-53-->C:\Users\tho38\Worm\android\app\src\main\AndroidManifest.xml:21:13-73
-53-->C:\Users\tho38\Worm\android\app\src\main\AndroidManifest.xml:21:23-70
+53-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:21:13-73
+53-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:21:23-70
 54            </intent-filter>
 55        </activity> <!-- The main service, handles playback, playlists and media buttons -->
 56        <service
-56-->[:react-native-track-player] C:\Users\tho38\Worm\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:9-20:19
+56-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:9-20:19
 57            android:name="com.doublesymmetry.trackplayer.service.MusicService"
-57-->[:react-native-track-player] C:\Users\tho38\Worm\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-79
+57-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-79
 58            android:enabled="true"
-58-->[:react-native-track-player] C:\Users\tho38\Worm\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-35
+58-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-35
 59            android:exported="false" >
-59-->[:react-native-track-player] C:\Users\tho38\Worm\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-37
+59-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-37
 60            <intent-filter>
-60-->[:react-native-track-player] C:\Users\tho38\Worm\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-19:29
+60-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-19:29
 61                <action android:name="android.intent.action.MEDIA_BUTTON" />
-61-->[:react-native-track-player] C:\Users\tho38\Worm\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:17-77
-61-->[:react-native-track-player] C:\Users\tho38\Worm\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:25-74
+61-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:17-77
+61-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:25-74
 62            </intent-filter>
 63        </service> <!-- A receiver that will receive media buttons. Required on pre-lollipop devices -->
 64        <receiver
-64-->[:react-native-track-player] C:\Users\tho38\Worm\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:23:9-29:20
+64-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:23:9-29:20
 65            android:name="androidx.media.session.MediaButtonReceiver"
-65-->[:react-native-track-player] C:\Users\tho38\Worm\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-70
+65-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-70
 66            android:exported="true" >
-66-->[:react-native-track-player] C:\Users\tho38\Worm\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-36
+66-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-36
 67            <intent-filter>
-67-->[:react-native-track-player] C:\Users\tho38\Worm\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-19:29
+67-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-19:29
 68                <action android:name="android.intent.action.MEDIA_BUTTON" />
-68-->[:react-native-track-player] C:\Users\tho38\Worm\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:17-77
-68-->[:react-native-track-player] C:\Users\tho38\Worm\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:25-74
+68-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:17-77
+68-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:25-74
 69            </intent-filter>
 70        </receiver>
 71

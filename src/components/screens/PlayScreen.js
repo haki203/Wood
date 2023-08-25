@@ -5,8 +5,20 @@ import Slider from '@react-native-community/slider';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { toggleIsPlay } from '../../actions/playerActions';
 import { connect, useDispatch, useSelector } from 'react-redux';
+import Animated, {
+    useAnimatedStyle,
+    useSharedValue,
+    withSpring,
+    withTiming,
+} from 'react-native-reanimated';
+import {
+    Gesture,
+    GestureDetector,
+    GestureHandlerRootView,
+} from 'react-native-gesture-handler';
 const { width, height } = Dimensions.get('window');
 const PlayScreen = () => {
+
     const [isPlaying, setIsPlaying] = useState(false);
     const [trackDuration, setTrackDuration] = useState(0);
     const [currentPosition, setCurrentPosition] = useState(0);
@@ -18,6 +30,8 @@ const PlayScreen = () => {
     const [showOptions, setShowOptions] = useState(false);
     const dispatch = useDispatch();
     const isPlay = useSelector(state => state.play.isPlay);
+    const pressed = useSharedValue(false);
+    const offset = useSharedValue(0);
     useEffect(() => {
         setupTrackPlayer();
     }, []);
@@ -77,7 +91,9 @@ const PlayScreen = () => {
         const seconds = Math.floor(timeInSeconds % 60);
         return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
     };
+
     return (
+
         <View style={styles.container}>
             <View style={styles.headerContainer}>
                 <TouchableOpacity onPress={() => dispatch(toggleIsPlay())} >
@@ -137,13 +153,25 @@ const PlayScreen = () => {
 
             </View>
         </View>
+
+
     );
 };
 
 export default PlayScreen;
 const styles = StyleSheet.create({
-    container: {
+    container1: {
         flex: 1,
+    },
+    circle: {
+        height: height,
+        width: width,
+        backgroundColor: '#b58df1',
+        borderRadius: 20,
+        cursor: 'grab',
+    },
+    container: {
+
         flexDirection: 'column',
         alignItems: 'center',
         padding: 10

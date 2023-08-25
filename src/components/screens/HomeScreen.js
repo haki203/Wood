@@ -4,17 +4,19 @@ import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import PlayScreen from './PlayScreen';
 import { connect } from 'react-redux'; // Import connect từ react-redux
-import { toggleIsPlay } from '../../actions/playerActions';
+import { scrollUp, scrollDown } from '../../actions/scrollActions';
+import GestureRecognizer, { swipeDirections } from 'react-native-swipe-gestures';
+import { PanGestureHandler, State } from 'react-native-gesture-handler';
 const { width, height } = Dimensions.get('window');
 
 class HomeScreen extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
             // Khởi tạo các trạng thái ban đầu ở đây
-            isScrolling: false,
-            scrollHome:false,
-            
+            lastScrollY: 0,
+            currentIndex: -1,
         };
         this.navigation = props.navigation;
         // Khai báo các phương thức được sử dụng trong component
@@ -29,27 +31,27 @@ class HomeScreen extends Component {
         this.startY = 0;
 
     }
-    handleScroll = (event) => {
-        const scrollY = event.nativeEvent.contentOffset.y;
-        this.props.updateScrollY(scrollY); // Gọi action để cập nhật scrollY vào Redux store
-      };
-    handlePanResponderMove = (e, gestureState) => {
-        const { dy } = gestureState;
-        if (dy > 100 && !this.state.isScrolling) {
-            this.setState({ isScrolling: true });
-            console.log('Đã lướt lên đầu màn hình');
-            this.props.toggleIsPlay();
-            // Xử lý tại đây khi người dùng lướt lên đầu màn hình
 
-        }
-    };
 
-    handlePanResponderRelease = () => {
-        this.setState({ isScrolling: false });
-    };
+    // handlePanResponderMove = (e, gestureState) => {
+    //     const { dy } = gestureState;
+    //     if (dy > 100 && !this.state.isScrolling) {
+    //         this.setState({ isScrolling: true });
+    //         console.log('Đã lướt lên đầu màn hình');
+    //         this.props.toggleIsPlay();
+    //         // Xử lý tại đây khi người dùng lướt lên đầu màn hình
+
+    //     }
+    // };
+
+    // handlePanResponderRelease = () => {
+    //     this.setState({ isScrolling: false });
+    // };
+
 
     handleBookSelection = () => {
         this.props.toggleIsPlay();
+
     };
     renderItem = ({ item }) => {
         return (
@@ -71,12 +73,83 @@ class HomeScreen extends Component {
             </View>
         );
     };
+
+    handleScroll = (event) => {
+        const currentScrollY = event.nativeEvent.contentOffset.y;
+        const isTabVisible = this.props.isTabVisible;
+
+        // So sánh với giá trị cuộn trước đó
+        if (currentScrollY > this.state.lastScrollY) {
+            this.props.scrollDown();
+
+        } else if (currentScrollY < this.state.lastScrollY) {
+            this.props.scrollUp();
+
+        } else {
+            console.log(parseInt(currentScrollY));
+        }
+
+        this.setState({ lastScrollY: currentScrollY });
+    }
+
+
+    /* khi nguoi dung luot qua phai -------------*/
+    onSwipe(gestureName, gestureState) {
+        const { SWIPE_LEFT, SWIPE_RIGHT } = swipeDirections;
+
+        switch (gestureName) {
+            case SWIPE_LEFT:
+                // Xử lý khi người dùng lướt qua trái
+                console.log('Lướt qua trái');
+                break;
+            case SWIPE_RIGHT:
+                // Xử lý khi người dùng lướt qua phải
+                console.log('Lướt qua phải');
+                break;
+
+        }
+    }
+    /* cpn -----------------------------------*/
+    renderHeader() {
+        return (
+            <View style={styles.headerContainer}>
+                <View style={styles.leftHeader}>
+                    <Image style={styles.logo} source={require('../../assets/images/gg.png')} />
+                    <Text style={styles.name}>Worm</Text>
+                </View>
+                <View style={styles.rightHeader}>
+                    <Icon style={{ marginRight: 10 }} name="search" color={'white'} size={25} />
+                    <Icon name="cog" color={'white'} size={28} />
+                </View>
+            </View>
+        );
+    }
+    renderCategoryList() {
+        return (
+            <View style={styles.listCategoryContainer}>
+                <View style={styles.categoryNameContainer}>
+                    <Text style={styles.categoryName}>Danh mục</Text>
+                </View>
+                <View style={styles.listCategory}>
+                    <FlatList
+                        data={sampleCategories}
+                        renderItem={this.renderItemCategory}
+                        keyExtractor={(item, index) => index.toString()}
+                        showsHorizontalScrollIndicator={false}
+                        horizontal={true}
+                    />
+                </View>
+            </View>
+        );
+    }
+    /* cpn -----------------------------------*/
+
+    /*---------------------------------------------*/
     render() {
 
         const { isPlay } = this.props;
         if (isPlay) {
             return (
-
                 <View style={{ flex: 1 }} {...this.panResponder.panHandlers}>
                     <PlayScreen />
                 </View>
@@ -86,79 +159,72 @@ class HomeScreen extends Component {
 
         return (
             <LinearGradient style={styles.container} colors={['#6fa8dc', '#cfe2f3']}>
-                <ScrollView 
-                showsHorizontalScrollIndicator={false} 
-                showsVerticalScrollIndicator={false}
+                <GestureRecognizer
+                    onSwipe={(direction, state) => this.onSwipe(direction, state)}
+                    config={{ velocityThreshold: 0.3, directionalOffsetThreshold: 80 }}
+                    style={{ flex: 1 }}
                 >
-                    <View style={styles.headerContainer}>
-                        <View style={styles.leftHeader}>
-                            <Image style={styles.logo} source={require('../../assets/images/gg.png')} />
-                            <Text style={styles.name}>Worm</Text>
-                        </View>
-                        <View style={styles.rightHeader}>
-                            <Icon name="cog" color={'#656565'} size={25} />
-                        </View>
-                    </View>
-                    <View style={styles.listCategoryContainer}>
-                        <View style={styles.categoryNameContainer}>
-                            <Text style={styles.categoryName}>Danh mục</Text>
-                        </View>
-                        <View style={styles.listCategory}>
+                    {this.renderHeader()}
+                </GestureRecognizer>
+                <View style={{ height: height - 65, }}>
+                    <ScrollView
+                        showsHorizontalScrollIndicator={false}
+                        showsVerticalScrollIndicator={false}
+                        onScroll={this.handleScroll}
+                        scrollEventThrottle={16}
+                    >
+                        {this.renderCategoryList()}
+                        <View style={styles.listContainer}>
+                            <View style={styles.categoryNameContainer}>
+                                <Text style={styles.categoryName}>Dành cho bạn</Text>
+                                <TouchableOpacity style={styles.seeMoreContainer}>
+                                    <Text style={styles.seeMoreText}>Xem thêm</Text>
+                                </TouchableOpacity>
+                            </View>
                             <FlatList
-                                data={sampleCategories}
-                                renderItem={this.renderItemCategory}
+                                data={sampleBooks}
+                                renderItem={this.renderItem}
+                                onScroll={this.flScroll}
                                 keyExtractor={(item, index) => index.toString()}
                                 showsHorizontalScrollIndicator={false}
                                 horizontal={true}
                             />
                         </View>
-                    </View>
-                    <View style={styles.listContainer}>
-                        <View style={styles.categoryNameContainer}>
-                            <Text style={styles.categoryName}>Dành cho bạn</Text>
-                            <TouchableOpacity style={styles.seeMoreContainer}>
-                                <Text style={styles.seeMoreText}>Xem thêm</Text>
-                            </TouchableOpacity>
+                        <View style={styles.listContainer}>
+                            <View style={styles.categoryNameContainer}>
+                                <Text style={styles.categoryName}>Dành cho ông hàng xóm</Text>
+                                <TouchableOpacity style={styles.seeMoreContainer}>
+                                    <Text style={styles.seeMoreText}>Xem thêm</Text>
+                                </TouchableOpacity>
+                            </View>
+                            <FlatList
+                                data={sampleBooks}
+                                renderItem={this.renderItem}
+                                keyExtractor={(item, index) => index.toString()}
+                                showsHorizontalScrollIndicator={false}
+                                horizontal={true}
+                            />
                         </View>
-                        <FlatList
-                            data={sampleBooks}
-                            renderItem={this.renderItem}
-                            keyExtractor={(item, index) => index.toString()}
-                            showsHorizontalScrollIndicator={false}
-                            horizontal={true}
-                        />
-                    </View>
-                    <View style={styles.listContainer}>
-                        <View style={styles.categoryNameContainer}>
-                            <Text style={styles.categoryName}>Dành cho ông hàng xóm</Text>
-                            <TouchableOpacity style={styles.seeMoreContainer}>
-                                <Text style={styles.seeMoreText}>Xem thêm</Text>
-                            </TouchableOpacity>
+                        <View style={styles.listContainer}>
+                            <View style={styles.categoryNameContainer}>
+                                <Text style={styles.categoryName}>Dành cho tôi</Text>
+                                <TouchableOpacity style={styles.seeMoreContainer}>
+                                    <Text style={styles.seeMoreText}>Xem thêm</Text>
+                                </TouchableOpacity>
+                            </View>
+                            <FlatList
+                                data={sampleBooks}
+                                renderItem={this.renderItem}
+                                keyExtractor={(item, index) => index.toString()}
+                                showsHorizontalScrollIndicator={false}
+                                horizontal={true}
+                            />
                         </View>
-                        <FlatList
-                            data={sampleBooks}
-                            renderItem={this.renderItem}
-                            keyExtractor={(item, index) => index.toString()}
-                            showsHorizontalScrollIndicator={false}
-                            horizontal={true}
-                        />
-                    </View>
-                    <View style={styles.listContainer}>
-                        <View style={styles.categoryNameContainer}>
-                            <Text style={styles.categoryName}>Dành cho tôi</Text>
-                            <TouchableOpacity style={styles.seeMoreContainer}>
-                                <Text style={styles.seeMoreText}>Xem thêm</Text>
-                            </TouchableOpacity>
-                        </View>
-                        <FlatList
-                            data={sampleBooks}
-                            renderItem={this.renderItem}
-                            keyExtractor={(item, index) => index.toString()}
-                            showsHorizontalScrollIndicator={false}
-                            horizontal={true}
-                        />
-                    </View>
-                </ScrollView>
+                    </ScrollView>
+                </View>
+
+
+
             </LinearGradient>
         );
 
@@ -167,20 +233,23 @@ class HomeScreen extends Component {
 const mapStateToProps = state => ({
     isPlay: state.play.isPlay,
     scrollY: state.scrollY,
+    isTabVisible: state.scroll.isTabVisible,
 });
 
-const mapDispatchToProps = {
-    toggleIsPlay,
+const mapDispatchToProps = (dispatch) => ({
+    toggleIsPlay: () => dispatch({ type: 'TOGGLE_IS_PLAY' }),
     updateScrollY: (scrollY) => dispatch({ type: 'UPDATE_SCROLL_Y', payload: scrollY }),
-};
+    scrollUp: () => dispatch(scrollUp()),
+    scrollDown: () => dispatch(scrollDown()),
+});
 const styles = StyleSheet.create({
     container: {
-        display:'flex',
+        display: 'flex',
         backgroundColor: '#fff',
         paddingLeft: 10,
-        paddingRight:10,
+        paddingRight: 10,
         width: width,
-        height:height,
+        height: height,
 
     },
     bookContainer: {
@@ -195,16 +264,16 @@ const styles = StyleSheet.create({
 
     listContainer: {
         width: '100%',
-        marginBottom:60
+        marginBottom: 30,
     },
     listCategoryContainer: {
+        marginTop:20
     },
     headerContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: height * 0.041,
-        padding: 10
+        height:65,
     },
     leftHeader: {
         flexDirection: 'row',
@@ -213,6 +282,8 @@ const styles = StyleSheet.create({
     },
     rightHeader: {
         flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center'
     },
     categoryContainer: {
         width: '100%',
@@ -223,7 +294,7 @@ const styles = StyleSheet.create({
         color: 'black',
         fontFamily: 'Poppins-Black',
     },
-    itemCategory:{
+    itemCategory: {
         paddingVertical: 10,
         paddingHorizontal: 18,
         backgroundColor: '#F5F5FA',
@@ -231,7 +302,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         marginBottom: 32
     },
-    itemNameCategory:{
+    itemNameCategory: {
         fontSize: 16,
         fontWeight: '400',
         fontFamily: 'Poppins-Black',
@@ -252,7 +323,7 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         fontFamily: 'Poppins-Black',
     },
-    
+
     logo: {
         width: 35,
         height: 35,

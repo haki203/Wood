@@ -5,6 +5,7 @@ import AppNavigator from './navigation/AppNavigator';
 import LinearGradient from 'react-native-linear-gradient';
 import { Provider } from 'react-redux';
 import store from './store/store';
+import InfiniteScrollFlatList from './components/screens/InfiniteScrollFlatList';
 
 const App = () => {
   return (
@@ -15,7 +16,10 @@ const App = () => {
         </NavigationContainer>
       </LinearGradient>
     </Provider>
+    // <Provider store={store}>
+    //   <InfiniteScrollFlatList />
 
+    // </Provider>
   );
 };
 

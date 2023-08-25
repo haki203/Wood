@@ -1,24 +1,19 @@
-// reducers/playReducer.js
+// scrollReducer.js
+import { SCROLL_UP, SCROLL_DOWN } from '../actions/scrollActions';
+
 const initialState = {
-    scrollY: 0,
-    isTabVisible: true,
+  isTabVisible: 'flex', // Giá trị mặc định
 };
 
 const scrollReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'UPDATE_SCROLL_Y':
-            return {
-                ...state,
-                scrollY: action.payload,
-            };
-        case 'TOGGLE_TAB_VISIBILITY':
-            return {
-                ...state,
-                isTabVisible: !state.isTabVisible,
-            };
-        default:
-            return state;
-    }
+  switch (action.type) {
+    case SCROLL_UP:
+      return { ...state, isTabVisible: 'flex' }; // Scroll up, show the tab
+    case SCROLL_DOWN:
+      return { ...state, isTabVisible: 'none' }; // Scroll down, hide the tab
+    default:
+      return state;
+  }
 };
 
 export default scrollReducer;

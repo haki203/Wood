@@ -1,10 +1,8 @@
 // store.js
 import { createStore, combineReducers } from 'redux';
-import playReducer from '../reducers/playReducer';
+import rootReducer from '../reducers/rootReducer';
 
-const rootReducer = combineReducers({
-  play: playReducer,
-});
+
 
 const store = createStore(rootReducer);
 

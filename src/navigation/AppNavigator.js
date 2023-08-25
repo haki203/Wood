@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { useSelector } from 'react-redux';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import LoginScreen from '../components/screens/LoginScreen';
@@ -14,7 +15,6 @@ import { connect } from 'react-redux';
 import ScreenWrapper from '../components/screens/ScreenWrapper';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-
 const Users = () => {
     return (
         <Stack.Navigator initialRouteName='Login' screenOptions={{ headerShown: false }}>
@@ -35,7 +35,12 @@ const Mains = () => {
 }
 
 const Home = ({ scrollY }) => {
-
+    const isTabVisibleRedux = useSelector(state => state.scroll.isTabVisible);
+    const [isTabVisible, setIsTabVisible] = useState(isTabVisibleRedux);
+    // Sử dụng useEffect để theo dõi thay đổi của isTabVisible trong Redux
+    useEffect(() => {
+        setIsTabVisible(isTabVisibleRedux);
+    }, [isTabVisibleRedux]);
     return (
         <Tab.Navigator
             screenOptions={({ route }) => ({
@@ -53,6 +58,9 @@ const Home = ({ scrollY }) => {
                     tabBarIcon: ({ color, size }) => (
                         <Icon name="home" color={color} size={30} />
                     ),
+                    tabBarStyle: {
+                        display: isTabVisible,
+                    },
                 }}
             >
                 {() => (
@@ -109,7 +117,7 @@ const Home = ({ scrollY }) => {
             </Tab.Screen>
 
         </Tab.Navigator>
-        
+
     )
 
 }
@@ -139,6 +147,7 @@ const Play = () => {
     );
 };
 const AppNavigator = () => {
+
     return (
         <>
             <Home />
@@ -147,7 +156,7 @@ const AppNavigator = () => {
 }
 const mapStateToProps = (state) => ({
     isTabVisible: state.isTabVisible,
-  });
+});
 export default connect(mapStateToProps)(AppNavigator);
 
 const styles = StyleSheet.create({

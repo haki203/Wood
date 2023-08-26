@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView, StyleSheet, FlatList, Dimensions, Image, TouchableOpacity, PanResponder } from 'react-native';
+import { View, Text, ScrollView, StyleSheet, FlatList, Dimensions, Image, TouchableOpacity, PanResponder, Animated } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import PlayScreen from './PlayScreen';
@@ -17,6 +17,7 @@ class HomeScreen extends Component {
             // Khởi tạo các trạng thái ban đầu ở đây
             lastScrollY: 0,
             currentIndex: -1,
+
         };
         this.navigation = props.navigation;
         // Khai báo các phương thức được sử dụng trong component
@@ -29,7 +30,7 @@ class HomeScreen extends Component {
             onPanResponderRelease: this.handlePanResponderRelease,
         });
         this.startY = 0;
-
+        this.animatedValue = new Animated.Value(0);
     }
 
 
@@ -78,6 +79,7 @@ class HomeScreen extends Component {
         const currentScrollY = event.nativeEvent.contentOffset.y;
         const isTabVisible = this.props.isTabVisible;
 
+
         // So sánh với giá trị cuộn trước đó
         if (currentScrollY > this.state.lastScrollY) {
             this.props.scrollDown();
@@ -93,22 +95,6 @@ class HomeScreen extends Component {
     }
 
 
-    /* khi nguoi dung luot qua phai -------------*/
-    onSwipe(gestureName, gestureState) {
-        const { SWIPE_LEFT, SWIPE_RIGHT } = swipeDirections;
-
-        switch (gestureName) {
-            case SWIPE_LEFT:
-                // Xử lý khi người dùng lướt qua trái
-                console.log('Lướt qua trái');
-                break;
-            case SWIPE_RIGHT:
-                // Xử lý khi người dùng lướt qua phải
-                console.log('Lướt qua phải');
-                break;
-
-        }
-    }
     /* cpn -----------------------------------*/
     renderHeader() {
         return (
@@ -122,13 +108,14 @@ class HomeScreen extends Component {
                     <Icon name="cog" color={'white'} size={28} />
                 </View>
             </View>
+
         );
     }
     renderCategoryList() {
         return (
             <View style={styles.listCategoryContainer}>
                 <View style={styles.categoryNameContainer}>
-                    <Text style={styles.categoryName}>Danh mục</Text>
+                    <Text style={[styles.categoryName,{paddingTop: 20}]}>Danh mục</Text>
                 </View>
                 <View style={styles.listCategory}>
                     <FlatList
@@ -159,18 +146,13 @@ class HomeScreen extends Component {
 
         return (
             <LinearGradient style={styles.container} colors={['#6fa8dc', '#cfe2f3']}>
-                <GestureRecognizer
-                    onSwipe={(direction, state) => this.onSwipe(direction, state)}
-                    config={{ velocityThreshold: 0.3, directionalOffsetThreshold: 80 }}
-                    style={{ flex: 1 }}
-                >
-                    {this.renderHeader()}
-                </GestureRecognizer>
-                <View style={{ height: height - 65, }}>
+                {this.renderHeader()}
+
+                <View style={{}}>
                     <ScrollView
                         showsHorizontalScrollIndicator={false}
                         showsVerticalScrollIndicator={false}
-                        onScroll={this.handleScroll}
+                        onScroll={this.handleScroll }
                         scrollEventThrottle={16}
                     >
                         {this.renderCategoryList()}
@@ -250,6 +232,7 @@ const styles = StyleSheet.create({
         paddingRight: 10,
         width: width,
         height: height,
+        paddingBottom:50
 
     },
     bookContainer: {
@@ -264,16 +247,16 @@ const styles = StyleSheet.create({
 
     listContainer: {
         width: '100%',
-        marginBottom: 30,
+        paddingBottom: 30,
     },
     listCategoryContainer: {
-        marginTop:20
+
     },
     headerContainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        height:65,
+        height: 60,
     },
     leftHeader: {
         flexDirection: 'row',
@@ -293,6 +276,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: 'black',
         fontFamily: 'Poppins-Black',
+        
     },
     itemCategory: {
         paddingVertical: 10,
@@ -311,7 +295,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         marginBottom: 16,
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
     },
     seeMoreContainer: {
         paddingRight: 16

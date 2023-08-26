@@ -6,6 +6,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import { Provider } from 'react-redux';
 import store from './store/store';
 import InfiniteScrollFlatList from './components/screens/InfiniteScrollFlatList';
+import LearnAnimation from './components/screens/LearnAnimation';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
     //   <InfiniteScrollFlatList />
 
     // </Provider>
+    //<LearnAnimation/>
   );
 };
 

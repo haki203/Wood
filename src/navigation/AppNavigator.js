@@ -48,7 +48,7 @@ const Home = ({ scrollY }) => {
                 headerShown: false,
                 color: 'red',
                 tabBarLabelStyle: { fontSize: 15 },
-                tabBarStyle: { height: 60, borderRadius: 20 },
+                tabBarStyle: { height: 60, borderRadius: 20,display: isTabVisible, },
             })}
         >
             <Tab.Screen
@@ -58,9 +58,10 @@ const Home = ({ scrollY }) => {
                     tabBarIcon: ({ color, size }) => (
                         <Icon name="home" color={color} size={30} />
                     ),
-                    tabBarStyle: {
-                        display: isTabVisible,
-                    },
+                    // tabBarStyle: {
+                    //     display: isTabVisible,
+                    //     height:0, borderRadius: 20
+                    // },
                 }}
             >
                 {() => (

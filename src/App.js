@@ -7,21 +7,23 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import InfiniteScrollFlatList from './components/screens/InfiniteScrollFlatList';
 import LearnAnimation from './components/screens/LearnAnimation';
+import MomoHeader from './components/animations/MonoHeader/MonoHeader';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <LinearGradient style={styles.container} colors={['#6fa8dc', '#cfe2f3']}>
+      <LinearGradient style={styles.container} colors={['#e6f2ff', '#cce6ff']}>
         <NavigationContainer>
           <AppNavigator />
         </NavigationContainer>
       </LinearGradient>
     </Provider>
+
     // <Provider store={store}>
     //   <InfiniteScrollFlatList />
-
     // </Provider>
     //<LearnAnimation/>
+    //<MomoHeader/>
   );
 };
 

@@ -145,7 +145,7 @@ class HomeScreen extends Component {
         }
 
         return (
-            <LinearGradient style={styles.container} colors={['#6fa8dc', 'white']}>
+            <LinearGradient style={styles.container} colors={[ '#e6f2ff','#cce6ff']}>
                 {this.renderHeader()}
 
                 <View style={{}}>

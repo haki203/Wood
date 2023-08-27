@@ -44,7 +44,6 @@ const Home = ({ scrollY }) => {
     return (
         <Tab.Navigator
             screenOptions={({ route }) => ({
-                tabBarActiveTintColor: '#ff8000',
                 headerShown: false,
                 color: 'red',
                 tabBarLabelStyle: { fontSize: 15 },

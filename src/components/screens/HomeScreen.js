@@ -5,8 +5,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import PlayScreen from './PlayScreen';
 import { connect } from 'react-redux'; // Import connect từ react-redux
 import { scrollUp, scrollDown } from '../../actions/scrollActions';
-import GestureRecognizer, { swipeDirections } from 'react-native-swipe-gestures';
-import { PanGestureHandler, State } from 'react-native-gesture-handler';
 const { width, height } = Dimensions.get('window');
 
 class HomeScreen extends Component {
@@ -32,24 +30,6 @@ class HomeScreen extends Component {
         this.startY = 0;
         this.animatedValue = new Animated.Value(0);
     }
-
-
-    // handlePanResponderMove = (e, gestureState) => {
-    //     const { dy } = gestureState;
-    //     if (dy > 100 && !this.state.isScrolling) {
-    //         this.setState({ isScrolling: true });
-    //         console.log('Đã lướt lên đầu màn hình');
-    //         this.props.toggleIsPlay();
-    //         // Xử lý tại đây khi người dùng lướt lên đầu màn hình
-
-    //     }
-    // };
-
-    // handlePanResponderRelease = () => {
-    //     this.setState({ isScrolling: false });
-    // };
-
-
     handleBookSelection = () => {
         this.props.toggleIsPlay();
 
@@ -229,7 +209,6 @@ const styles = StyleSheet.create({
         display: 'flex',
         backgroundColor: '#fff',
         paddingLeft: 10,
-        paddingRight: 10,
         width: width,
         height: height,
         paddingBottom:50
@@ -257,6 +236,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         height: 60,
+        paddingRight:10
     },
     leftHeader: {
         flexDirection: 'row',

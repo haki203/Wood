@@ -16,8 +16,8 @@ MERGED from [:react-native-safe-area-context] C:\Users\tho38\Desktop\Wood\node_m
 MERGED from [:react-native-screens] C:\Users\tho38\Desktop\Wood\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-32:12
 MERGED from [:react-native-vector-icons] C:\Users\tho38\Desktop\Wood\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-7:12
-MERGED from [com.facebook.react:react-android:0.72.3] C:\Users\tho38\.gradle\caches\transforms-3\3005f7fecd3c9f25b5c6e2213fbc52ef\transformed\jetified-react-android-0.72.3-debug\AndroidManifest.xml:2:1-7:12
-MERGED from [com.facebook.react:hermes-android:0.72.3] C:\Users\tho38\.gradle\caches\transforms-3\0d688140c973e9b88bdc09376f98160f\transformed\jetified-hermes-android-0.72.3-debug\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.react:react-android:0.72.4] C:\Users\tho38\.gradle\caches\transforms-3\e227d42255e17680ce2075904348c915\transformed\jetified-react-android-0.72.4-debug\AndroidManifest.xml:2:1-7:12
+MERGED from [com.facebook.react:hermes-android:0.72.4] C:\Users\tho38\.gradle\caches\transforms-3\a5d1380f097d180958ddc42b2632b92d\transformed\jetified-hermes-android-0.72.4-debug\AndroidManifest.xml:2:1-7:12
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.5.0] C:\Users\tho38\.gradle\caches\transforms-3\f15bec81ce8958a721e68c9727768fe7\transformed\jetified-imagepipeline-okhttp3-2.5.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.github.DoubleSymmetry:KotlinAudio:v1.2.4] C:\Users\tho38\.gradle\caches\transforms-3\970cf11235428473c1bc5f003bf890da\transformed\jetified-KotlinAudio-v1.2.4\AndroidManifest.xml:2:1-9:12
 MERGED from [io.coil-kt:coil:1.4.0] C:\Users\tho38\.gradle\caches\transforms-3\035236036c8864cedb06505c1e3e8206\transformed\jetified-coil-1.4.0\AndroidManifest.xml:2:1-9:12
@@ -226,10 +226,10 @@ MERGED from [:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_module
 MERGED from [:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:react-native-vector-icons] C:\Users\tho38\Desktop\Wood\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:react-native-vector-icons] C:\Users\tho38\Desktop\Wood\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-44
-MERGED from [com.facebook.react:react-android:0.72.3] C:\Users\tho38\.gradle\caches\transforms-3\3005f7fecd3c9f25b5c6e2213fbc52ef\transformed\jetified-react-android-0.72.3-debug\AndroidManifest.xml:5:5-44
-MERGED from [com.facebook.react:react-android:0.72.3] C:\Users\tho38\.gradle\caches\transforms-3\3005f7fecd3c9f25b5c6e2213fbc52ef\transformed\jetified-react-android-0.72.3-debug\AndroidManifest.xml:5:5-44
-MERGED from [com.facebook.react:hermes-android:0.72.3] C:\Users\tho38\.gradle\caches\transforms-3\0d688140c973e9b88bdc09376f98160f\transformed\jetified-hermes-android-0.72.3-debug\AndroidManifest.xml:5:5-44
-MERGED from [com.facebook.react:hermes-android:0.72.3] C:\Users\tho38\.gradle\caches\transforms-3\0d688140c973e9b88bdc09376f98160f\transformed\jetified-hermes-android-0.72.3-debug\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.react:react-android:0.72.4] C:\Users\tho38\.gradle\caches\transforms-3\e227d42255e17680ce2075904348c915\transformed\jetified-react-android-0.72.4-debug\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.react:react-android:0.72.4] C:\Users\tho38\.gradle\caches\transforms-3\e227d42255e17680ce2075904348c915\transformed\jetified-react-android-0.72.4-debug\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.react:hermes-android:0.72.4] C:\Users\tho38\.gradle\caches\transforms-3\a5d1380f097d180958ddc42b2632b92d\transformed\jetified-hermes-android-0.72.4-debug\AndroidManifest.xml:5:5-44
+MERGED from [com.facebook.react:hermes-android:0.72.4] C:\Users\tho38\.gradle\caches\transforms-3\a5d1380f097d180958ddc42b2632b92d\transformed\jetified-hermes-android-0.72.4-debug\AndroidManifest.xml:5:5-44
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.5.0] C:\Users\tho38\.gradle\caches\transforms-3\f15bec81ce8958a721e68c9727768fe7\transformed\jetified-imagepipeline-okhttp3-2.5.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.5.0] C:\Users\tho38\.gradle\caches\transforms-3\f15bec81ce8958a721e68c9727768fe7\transformed\jetified-imagepipeline-okhttp3-2.5.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.DoubleSymmetry:KotlinAudio:v1.2.4] C:\Users\tho38\.gradle\caches\transforms-3\970cf11235428473c1bc5f003bf890da\transformed\jetified-KotlinAudio-v1.2.4\AndroidManifest.xml:5:5-7:41

@@ -5,33 +5,15 @@ import Slider from '@react-native-community/slider';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { toggleIsPlay } from '../../actions/playerActions';
 import { connect, useDispatch, useSelector } from 'react-redux';
-import Animated, {
-    useAnimatedStyle,
-    useSharedValue,
-    withSpring,
-    withTiming,
-} from 'react-native-reanimated';
-import {
-    Gesture,
-    GestureDetector,
-    GestureHandlerRootView,
-} from 'react-native-gesture-handler';
 const { width, height } = Dimensions.get('window');
 const PlayScreen = () => {
-
     const [isPlaying, setIsPlaying] = useState(false);
     const [trackDuration, setTrackDuration] = useState(0);
     const [currentPosition, setCurrentPosition] = useState(0);
     const [trackTitle, setTrackTitle] = useState('');
     const [trackArtist, setTrackArtist] = useState('');
-    const [volume, setVolume] = useState(70.0); // Giá trị mặc định cho âm lượng
-    const [playbackRate, setPlaybackRate] = useState(1.0);
-    const [showVolumeSlider, setShowVolumeSlider] = useState(false);
     const [showOptions, setShowOptions] = useState(false);
     const dispatch = useDispatch();
-    const isPlay = useSelector(state => state.play.isPlay);
-    const pressed = useSharedValue(false);
-    const offset = useSharedValue(0);
     useEffect(() => {
         setupTrackPlayer();
     }, []);
@@ -44,15 +26,7 @@ const PlayScreen = () => {
     const skipToTime = async (time) => {
         await TrackPlayer.seekTo(time);
     };
-    const changeVolume = async (newVolume) => {
-        await TrackPlayer.setVolume(newVolume);
-        setVolume(newVolume);
-    };
 
-    const changePlaybackRate = async (newPlaybackRate) => {
-        await TrackPlayer.setRate(newPlaybackRate);
-        setPlaybackRate(newPlaybackRate);
-    };
     const setupTrackPlayer = async () => {
         await TrackPlayer.add({
             id: 'your_track_id',
@@ -91,9 +65,7 @@ const PlayScreen = () => {
         const seconds = Math.floor(timeInSeconds % 60);
         return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
     };
-
     return (
-
         <View style={styles.container}>
             <View style={styles.headerContainer}>
                 <TouchableOpacity onPress={() => dispatch(toggleIsPlay())} >
@@ -119,7 +91,6 @@ const PlayScreen = () => {
                         value={currentPosition}
                         onValueChange={onSliderValueChange}
                     />
-
                     <View style={styles.navContainer}>
                         <TouchableOpacity>
                             <Icon name="step-backward" color={'#656565'} size={22} />
@@ -137,20 +108,6 @@ const PlayScreen = () => {
 
                     </View>
                 </View>
-
-                {/* Tạo danh sách menu để tua đến điểm tua */}
-                {/* <View style={styles.playList}>
-
-                    {skipPoints.map((point, index) => (
-                        <TouchableOpacity
-                            key={index}
-                            onPress={() => skipToTime(point.time)}
-                        >
-                            <Text>{point.label}</Text>
-                        </TouchableOpacity>
-                    ))}
-                </View> */}
-
             </View>
         </View>
 

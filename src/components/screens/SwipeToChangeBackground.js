@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import { View, Animated, PanResponder, StyleSheet, Dimensions, TouchableOpacity, Text,Button } from 'react-native';
-import PlayScreen from './PlayScreen';
+import PlayScreen from './play/PlayScreen';
 import LinearGradient from 'react-native-linear-gradient';
 const { width, height } = Dimensions.get('window');
 export default function SwipeToChangeBackground() {

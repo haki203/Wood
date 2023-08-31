@@ -1,14 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View, LogBox, Image } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import AppNavigator from './navigation/AppNavigator';
-import LinearGradient from 'react-native-linear-gradient';
 import { Provider } from 'react-redux';
 import store from './store/store';
-import InfiniteScrollFlatList from './components/screens/InfiniteScrollFlatList';
-import LearnAnimation from './components/screens/LearnAnimation';
-import MomoHeader from './components/animations/MonoHeader/MonoHeader';
 import SwipeToChangeBackground from './components/screens/SwipeToChangeBackground';
+import HotScreen from './components/screens/hot/HotScreen';
 
 const App = () => {
   return (
@@ -21,7 +16,7 @@ const App = () => {
     // </Provider>
 
     <Provider store={store}>
-          <SwipeToChangeBackground/>
+          <HotScreen/>
 
     </Provider>
     //<LearnAnimation/>

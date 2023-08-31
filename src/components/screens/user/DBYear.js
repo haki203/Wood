@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View, Dimensions, Platform, TouchableOpacity, ScrollView } from 'react-native';
 import React ,{useRef,useEffect}from 'react';
-import ScreenWrapper from '../../ScreenWrapper';
+import ScreenWrapper from '../ScreenWrapper';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useDispatch, useSelector } from 'react-redux';
-import { setYear } from "../../../actions/authActions";
+import { setYear } from "../../../actions/userAction";
 const colorText = "#00004d";
 const fontText = "Poppins-Medium";
 const { width, height } = Dimensions.get('window');

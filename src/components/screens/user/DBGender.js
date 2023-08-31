@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View, Dimensions, Platform, TouchableOpacity } from 'react-native';
 import React from 'react';
-import ScreenWrapper from '../../ScreenWrapper';
+import ScreenWrapper from '../ScreenWrapper';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useDispatch, useSelector } from 'react-redux';
-import { setGender } from "../actions/userAction";
+import { setGender } from "../../../actions/userAction";
 const { width, height } = Dimensions.get('window');
 const DBGender = () => {
     // GENDER: 1- nam, 2:nu , 3,gioi tinh khac, 0: ko tra loi

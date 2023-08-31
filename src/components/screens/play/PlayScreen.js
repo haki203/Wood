@@ -79,7 +79,7 @@ const PlayScreen = () => {
                 <View style={styles.infoContainer}>
                     <Text style={styles.nameBook}>{trackTitle}</Text>
                     <Text style={styles.nameAuthor}>{trackArtist}</Text>
-                    <Image style={{ width: width / 2, height: height / 2.5, borderRadius: 20, marginTop: 8 }} source={require('../../assets/images/Dac-Nhan-Tam.jpg')} />
+                    <Image style={{ width: width / 2, height: height / 2.5, borderRadius: 20, marginTop: 8 }} source={require('../../../assets/images/Dac-Nhan-Tam.jpg')} />
                 </View>
                 <View style={styles.menuContainer}>
                     <Text style={{ fontSize: 14, fontWeight: 'bold', }}>{formatTime(currentPosition)} / {formatTime(trackDuration)}</Text>

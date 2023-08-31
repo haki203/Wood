@@ -6,7 +6,7 @@ const ItemBook = (item) => {
   return (
     <TouchableOpacity style={{flex:1,width:'100%',paddingTop: 20 }}>  
       <View style={{ flexDirection: 'row', }}>
-        <Image style={styles.sach} source={require('../assets/images/image.webp')}></Image>
+        <Image style={styles.sach} source={require('../../../assets/images/image.webp')}></Image>
         <View style={{ padding: 15, justifyContent: 'center' }}>
           <Text style={{
             fontSize: 12,

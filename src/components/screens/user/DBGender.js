@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Dimensions, Platform, TouchableOpacity } from 'react-native';
 import React from 'react';
-import ScreenWrapper from '../components/screens/ScreenWrapper';
+import ScreenWrapper from '../../ScreenWrapper';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useDispatch, useSelector } from 'react-redux';
 import { setGender } from "../actions/userAction";

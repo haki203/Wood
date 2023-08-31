@@ -8,6 +8,7 @@ export default function SwipeToChangeBackground() {
     const [heightView, setHeight] = useState(height);
     const [isPlay, setIsPlay] = useState(false);
     const [bottom, setBottom] = useState(0);
+    
     const panResponder = React.useMemo(
         () =>
             PanResponder.create({

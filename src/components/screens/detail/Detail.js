@@ -124,7 +124,7 @@ const Detail = ({/*navigation*/ }) => {
                         <View style={styles.Comment_Container}>
                             <Text style={styles.Comment_1}>Bình luận & Đánh giá</Text>
                             <View style={styles.Comment_2}>
-                                <Image style={styles.Comment_2_1} source={require('../assets/images/hvddb.jpg')} />
+                                <Image style={styles.Comment_2_1} source={require('../../../assets/images/hvddb.jpg')} />
                                 <View style={styles.Danhgia_Comment}>
                                     <View style={styles.Danhgia_Comment_1}>
                                         <Text style={styles.Danhgia_Comment_3}>4.5</Text>

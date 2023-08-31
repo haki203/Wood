@@ -6,7 +6,7 @@ const ItemSachNoi = (props) => {
     return (
         <TouchableOpacity>
             <View style={{ flexDirection: 'row', paddingTop: 20 }}>
-                <Image style={styles.sach} source={require('../assets/images/image.webp')}></Image>
+                <Image style={styles.sach} source={require('../../../assets/images/image.webp')}></Image>
                 <View style={{ padding: 15, justifyContent: 'center' }}>
                     <Text style={{
                         fontSize: 12,

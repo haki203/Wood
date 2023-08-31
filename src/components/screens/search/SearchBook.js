@@ -5,6 +5,7 @@ const { height } = Dimensions.get('window');
 const fontText = 'Poppins-Medium';
 const colorBtnFocus = '#ccf5ff';
 const colorTextFocus = '#cccccc';
+const srcImage='../../../assets/images/';
 const SearchBook = (props) => {
   const { navigation } = props;
   // const [searchText, setSearchText] = useState('');
@@ -36,7 +37,7 @@ const SearchBook = (props) => {
             <TextInput
               underlineColorAndroid="transparent" placeholder='Tìm kiếm sách, tác giả' style={[styles.search, { backgroundColor: 'hsla(240, 60%, 80%, 0.5)' }]}>
             </TextInput>
-            <Image style={styles.icon} source={require('../assets/images/search-white.png')}></Image>
+            <Image style={styles.icon} source={require('../../../assets/images/search-white.png')}></Image>
             <Text style={styles.huy}>Hủy</Text>
           </View>
           <View style={styles.btnHeaderContainer}>
@@ -45,7 +46,7 @@ const SearchBook = (props) => {
                 style={[styles.btnHeader, { backgroundColor: (isPressed == 0) ? colorBtnFocus : 'white' }]}
                 onPress={() => handleBtnHeader(0)}>
                 <Image
-                  source={(isPressed == 0) ? require('../assets/images/audio-book.png') : require('../assets/images/audiobook-nor.png')}
+                  source={(isPressed == 0) ? require('../../../assets/images/audio-book.png') : require('../../../assets/images/audiobook-nor.png')}
                   style={styles.imageHeader}
                 />
               </TouchableOpacity>
@@ -56,7 +57,7 @@ const SearchBook = (props) => {
                 style={[styles.btnHeader, { backgroundColor: (isPressed == 1) ? colorBtnFocus : 'white' }]}
                 onPress={() => handleBtnHeader(1)}>
                 <Image
-                  source={(isPressed == 1) ? require('../assets/images/audio-book.png') : require('../assets/images/audiobook-nor.png')}
+                  source={(isPressed == 1) ? require('../../../assets/images/audio-book.png') : require('../../../assets/images/audiobook-nor.png')}
                   style={styles.imageHeader}
                 />
               </TouchableOpacity>
@@ -67,7 +68,7 @@ const SearchBook = (props) => {
                 style={[styles.btnHeader, { backgroundColor: (isPressed == 2) ? colorBtnFocus : 'white' }]}
                 onPress={() => handleBtnHeader(2)}>
                 <Image
-                  source={(isPressed == 2) ? require('../assets/images/audio-book.png') : require('../assets/images/audiobook-nor.png')}
+                  source={(isPressed == 2) ? require('../../../assets/images/audio-book.png') : require('../../../assets/images/audiobook-nor.png')}
                   style={styles.imageHeader}
                 />
               </TouchableOpacity>

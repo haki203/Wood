@@ -4,6 +4,9 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import SwipeToChangeBackground from './components/screens/SwipeToChangeBackground';
 import HotScreen from './components/screens/hot/HotScreen';
+import SearchBook from './components/screens/search/SearchBook';
+import Detail from './components/screens/detail/Detail';
+import ProfileInputScreen from './components/screens/user/ProfileInputScreen';
 
 const App = () => {
   return (
@@ -16,7 +19,7 @@ const App = () => {
     // </Provider>
 
     <Provider store={store}>
-          <HotScreen/>
+          <ProfileInputScreen/>
 
     </Provider>
     //<LearnAnimation/>

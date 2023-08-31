@@ -80,7 +80,7 @@ class HomeScreen extends Component {
         return (
             <View style={styles.headerContainer}>
                 <View style={styles.leftHeader}>
-                    <Image style={styles.logo} source={require('../../assets/images/gg.png')} />
+                    <Image style={styles.logo} source={require('../../../assets/images/gg.png')} />
                     <Text style={styles.name}>Worm</Text>
                 </View>
                 <View style={styles.rightHeader}>

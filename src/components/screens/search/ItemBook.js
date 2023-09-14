@@ -9,13 +9,13 @@ const ItemBook = (item) => {
         <Image style={styles.sach} source={require('../../../assets/images/image.webp')}></Image>
         <View style={{ padding: 15, justifyContent: 'center' }}>
           <Text style={{
-            fontSize: 12,
+            fontSize: 14,
             fontWeight: '400',
             fontStyle: 'normal',
             color: '#6b73ba'
-          }}>{item.category}</Text>
+          }}>{item.category === "audiobook" ? "Audio Book" : item.category === "ebook" ? "Ebook" : item.category}</Text>
           <Text style={{
-            fontSize: 16,
+            fontSize: 18,
             fontWeight: '600',
             fontStyle: 'normal',
             color: '#374B87'

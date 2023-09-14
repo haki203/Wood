@@ -50,7 +50,7 @@ const ProfileInputScreen = () => {
 
   return (
     <KeyboardAwareScrollView style={styles.container}>
-      <View style={{ padding: 20, height: height }}>
+      <View style={{ padding:20,height:height}}>
         <View style={styles.headerContainer}>
           <Text style={styles.text1}>
             Vui lòng cho chúng tôi biết thêm về bạn một chút nhé!
@@ -106,12 +106,13 @@ const ProfileInputScreen = () => {
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 1 }}
              colors={['#ff7733', '#ffaa80']}>
-            <Text style={[styles.inputText, { paddingTop: 0, color: 'white' }]}>Tiếp tục</Text>
+            <Text style={[styles.inputText, {color: 'white' }]}>Tiếp tục</Text>
             </LinearGradient>
         </TouchableOpacity>
 
       </View>
-      <View style={{ bottom: 0,}}>
+      
+      <View style={{}}>
         {
           (isSelectGender == true) ? (
             <View style={{ width: width }}>
@@ -124,7 +125,7 @@ const ProfileInputScreen = () => {
             )
         }
       </View>
-      <View style={{ bottom: 0,}}>
+      <View style={{}}>
         {
           (isSelectYear == true) ? (
             <View style={{ width: width }}>
@@ -143,10 +144,8 @@ const ProfileInputScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
+    flex:1,
     backgroundColor: '#D4E8FC',
-    height: '100%',
-    display: 'flex',
-
   },
   text1: {
     fontSize: 40,
@@ -190,7 +189,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#F32C0C',
-    padding: 10,
     borderRadius: 90,
     height: 50,
   },

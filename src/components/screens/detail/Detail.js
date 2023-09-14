@@ -4,20 +4,24 @@ import Icon_1 from 'react-native-vector-icons/Ionicons';
 import Icon_2 from 'react-native-vector-icons/AntDesign';
 import Icon_3 from 'react-native-vector-icons/FontAwesome';
 import Icon_4 from 'react-native-vector-icons/FontAwesome5';
-
+import { connect, useDispatch, useSelector } from 'react-redux';
 const { width, height } = Dimensions.get('window');
 
-const Detail = ({/*navigation*/ }) => {
+const Detail = (props) => {
     const [showMore, setShowMore] = useState(false);
+    const { navigation } = props;
+    const dispatch = useDispatch();
     const [isHearted, setIsHearted] = useState(false);
-
     const toggleShowMore = () => {
         setShowMore(prevShowMore => !prevShowMore);
     };
     const handleHeartPress = () => {
         setIsHearted(!isHearted);
     };
-
+    const handlePlay = () => {
+        navigation.navigate('Home');
+        dispatch({ type: 'SET_IS_PLAY', payload: true });
+    };
     // ANIMATION HEADER ----------------------------------------------------------
 
 
@@ -27,7 +31,7 @@ const Detail = ({/*navigation*/ }) => {
             <View style={styles.Header_Container}>
                 <View style={styles.icon_Container}>
                     <View>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=>navigation.goBack()}>
                             <Icon_1 name="chevron-back" size={30} color="white" />
                         </TouchableOpacity>
                     </View>
@@ -56,18 +60,14 @@ const Detail = ({/*navigation*/ }) => {
                         </TouchableOpacity>
                     </View>
                 </View>
-                <View style={styles.NgheFree_Container}>
-                    <TouchableOpacity style={{ width: '100%', marginTop: 10,}}>
-                        <View style={styles.NgheFree_1}>
-                            <Icon_4 name="play" size={25} color="white" />
-                            <Text style={styles.NgheFree_1_1}>Nghe</Text>
-                        </View>
+                <View style={styles.BtnPlay_Container}>
+                    <TouchableOpacity style={styles.btnPlay} onPress={handlePlay}>
+                        <Icon_4 name="play" size={25} color="white" />
+                        <Text style={styles.btnPlayText}>Nghe</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{ width: '100%', marginTop: 10,}}>
-                        <View style={styles.NgheFree_1}>
-                            <Icon_4 name="play" size={25} color="white" />
-                            <Text style={styles.NgheFree_1_1}>Đọc</Text>
-                        </View>
+                    <TouchableOpacity style={styles.btnPlay}>
+                        <Icon_4 name="play" size={25} color="white" />
+                        <Text style={styles.btnPlayText}>Đọc</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -75,116 +75,115 @@ const Detail = ({/*navigation*/ }) => {
             <ScrollView
 
             >
-                <View style={styles.container}>
-                    <View style={styles.Content_Container}>
-                        <View style={styles.Detail_Container}>
-                            <Text style={styles.Detail_1}>Giới thiệu nội dung</Text>
-                            <Text style={styles.Detail_2}>
-                                Trong chuyến săn tìm một sinh vật biển kì lạ, đoàn thám hiểm của giáo sư Pierre Aronnax bất ngờ bị “sinh vật biển” ấy nuốt thẳng vào bụng! Họ đâu có biết rằng đó là một cơ hội tuyệt vời để chu du khắp các đại dương cùng thuyền trưởng Nemo trong chiếc tàu ngầm Nautilus sau này.
-                                {showMore && (
-                                    <Text>
-                                        {' '}
-                                        Đó là một chuyến phiêu lưu thú vị với những phát minh kì lạ, những cuộc chạm trán bất ngờ và những bí mật li kì,… Tất cả đều tạo nên một sức hút riêng của “Hai vạn dặm dưới đáy biển” hay (“Hai vạn dặm dưới biển”
-                                    </Text>
-                                )}
-                            </Text>
-                            <TouchableOpacity onPress={toggleShowMore} style={styles.toggleButton}>
-                                <Text style={styles.toggleButtonText_1}> {showMore ? 'Thu gọn' : 'Xem thêm'} </Text>
-                                <Icon_2 style={styles.toggleButtonText_2} name={showMore ? 'up' : 'down'} size={18} color="white" />
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.ThoiLuong_Container}>
-                            <View style={styles.Time}>
-                                <Icon_1 name="time-outline" size={25} color="black" />
-                                <Text style={styles.Time_1}>3 giờ 00 phút</Text>
-                            </View>
-                            <View style={styles.Time}>
-                                <Icon_3 style={styles.Time_2} name="home" size={25} color="black" />
-                                <Text style={styles.Time_1}>Alphabooks</Text>
-                            </View>
-                        </View>
-                        <View style={styles.ThoiLuong_Container}>
-                            <TouchableOpacity>
-                                <View style={styles.TheLoai}>
-                                    <Text style={styles.TheLoai_1}>Kinh Doanh</Text>
-                                </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <View style={styles.TheLoai}>
-                                    <Text style={styles.TheLoai_1}>Phiêu Lưu</Text>
-                                </View>
-                            </TouchableOpacity>
-                            <TouchableOpacity>
-                                <View style={styles.TheLoai}>
-                                    <Text style={styles.TheLoai_1}>Lãnh Đạo</Text>
-                                </View>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.Separator}></View>
-                        <View style={styles.Comment_Container}>
-                            <Text style={styles.Comment_1}>Bình luận & Đánh giá</Text>
-                            <View style={styles.Comment_2}>
-                                <Image style={styles.Comment_2_1} source={require('../../../assets/images/hvddb.jpg')} />
-                                <View style={styles.Danhgia_Comment}>
-                                    <View style={styles.Danhgia_Comment_1}>
-                                        <Text style={styles.Danhgia_Comment_3}>4.5</Text>
-                                        <Icon_3 style={styles.Danhgia_Comment_2} name="star" size={20} color="white" />
-                                        <Icon_3 style={styles.Danhgia_Comment_2} name="star" size={20} color="white" />
-                                        <Icon_3 style={styles.Danhgia_Comment_2} name="star" size={20} color="white" />
-                                        <Icon_3 style={styles.Danhgia_Comment_2} name="star" size={20} color="white" />
-                                        <Icon_3 style={styles.Danhgia_Comment_2} name="star-half-full" size={20} color="white" />
-                                        <Text style={styles.Danhgia_Comment_3}>( 136 )</Text>
-                                    </View>
-                                    <View style={styles.Danhgia_Comment_1}>
-                                        <View>
-                                            <Text style={styles.Danhgia_Comment_4}>4.4/5.0</Text>
-                                            <Text style={styles.Danhgia_Comment_4}>NỘI DUNG</Text>
-                                        </View>
-                                        <View style={styles.verticalLine}></View>
-                                        <View>
-                                            <Text style={styles.Danhgia_Comment_5}>4.6/5.0</Text>
-                                            <Text style={styles.Danhgia_Comment_5}>GIỌNG ĐỌC</Text>
-                                        </View>
-                                    </View>
-                                </View>
-                            </View>
-                        </View>
-                        <View>
-                            <View style={styles.Comment_DocGia}>
-                                <View style={styles.icon_Container_1}>
-                                    <Text style={styles.Comment_DocGia_7}>Rất hay</Text>
-                                    <Icon_2 name="like1" size={25} color="black" />
-                                </View>
-                                <Text style={styles.Comment_DocGia_8}>BỞI TRẦN THỨC VÀO 26/8/2023</Text>
-                                <View style={styles.Comment_DocGia_1}>
-                                    <Text style={styles.Comment_DocGia_8}>NỘI DUNG</Text>
-                                    <View style={styles.Comment_DocGia_3}>
-                                        <Icon_3 style={styles.Comment_DocGia_4} name="star" size={20} color="white" />
-                                        <Icon_3 style={styles.Comment_DocGia_4} name="star" size={20} color="white" />
-                                        <Icon_3 style={styles.Comment_DocGia_4} name="star" size={20} color="white" />
-                                        <Icon_3 style={styles.Comment_DocGia_4} name="star" size={20} color="white" />
-                                        <Icon_3 style={styles.Comment_DocGia_4} name="star" size={20} color="white" />
-                                    </View>
-                                </View>
-                                <View style={styles.Comment_DocGia_1}>
-                                    <Text style={styles.Comment_DocGia_8}>GIỌNG ĐỌC</Text>
-                                    <View style={styles.Comment_DocGia_5}>
-                                        <Icon_3 style={styles.Comment_DocGia_6} name="star" size={20} color="white" />
-                                        <Icon_3 style={styles.Comment_DocGia_6} name="star" size={20} color="white" />
-                                        <Icon_3 style={styles.Comment_DocGia_6} name="star" size={20} color="white" />
-                                        <Icon_3 style={styles.Comment_DocGia_6} name="star" size={20} color="white" />
-                                        <Icon_3 style={styles.Comment_DocGia_6} name="star" size={20} color="white" />
-                                    </View>
-                                </View>
-                            </View>
-                            <TouchableOpacity>
-                                <Text style={styles.Comment_DocGia_2}>Xem tất cả 136 đánh giá</Text>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.Separator}></View>
-                        <Text style={styles.Mucluc_1}>Mục lục</Text>
+                <View style={styles.Content_Container}>
+                    <View style={styles.Detail_Container}>
+                        <Text style={styles.Detail_1}>Giới thiệu nội dung</Text>
+                        <Text style={styles.Detail_2}>
+                            Trong chuyến săn tìm một sinh vật biển kì lạ, đoàn thám hiểm của giáo sư Pierre Aronnax bất ngờ bị “sinh vật biển” ấy nuốt thẳng vào bụng! Họ đâu có biết rằng đó là một cơ hội tuyệt vời để chu du khắp các đại dương cùng thuyền trưởng Nemo trong chiếc tàu ngầm Nautilus sau này.
+                            {showMore && (
+                                <Text>
+                                    {' '}
+                                    Đó là một chuyến phiêu lưu thú vị với những phát minh kì lạ, những cuộc chạm trán bất ngờ và những bí mật li kì,… Tất cả đều tạo nên một sức hút riêng của “Hai vạn dặm dưới đáy biển” hay (“Hai vạn dặm dưới biển”
+                                </Text>
+                            )}
+                        </Text>
+                        <TouchableOpacity onPress={toggleShowMore} style={styles.toggleButton}>
+                            <Text style={styles.toggleButtonText_1}> {showMore ? 'Thu gọn' : 'Xem thêm'} </Text>
+                            <Icon_2 style={styles.toggleButtonText_2} name={showMore ? 'up' : 'down'} size={18} color="white" />
+                        </TouchableOpacity>
                     </View>
+                    <View style={styles.ThoiLuong_Container}>
+                        <View style={styles.Time}>
+                            <Icon_1 name="time-outline" size={25} color="black" />
+                            <Text style={styles.Time_1}>3 giờ 00 phút</Text>
+                        </View>
+                        <View style={styles.Time}>
+                            <Icon_3 style={styles.Time_2} name="home" size={25} color="black" />
+                            <Text style={styles.Time_1}>Alphabooks</Text>
+                        </View>
+                    </View>
+                    <View style={styles.ThoiLuong_Container}>
+                        <TouchableOpacity>
+                            <View style={styles.TheLoai}>
+                                <Text style={styles.TheLoai_1}>Kinh Doanh</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <View style={styles.TheLoai}>
+                                <Text style={styles.TheLoai_1}>Phiêu Lưu</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <View style={styles.TheLoai}>
+                                <Text style={styles.TheLoai_1}>Lãnh Đạo</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.Separator}></View>
+                    <View style={styles.Comment_Container}>
+                        <Text style={styles.Comment_1}>Bình luận & Đánh giá</Text>
+                        <View style={styles.Comment_2}>
+                            <Image style={styles.Comment_2_1} source={require('../../../assets/images/hvddb.jpg')} />
+                            <View style={styles.Danhgia_Comment}>
+                                <View style={styles.Danhgia_Comment_1}>
+                                    <Text style={styles.Danhgia_Comment_3}>4.5</Text>
+                                    <Icon_3 style={styles.Danhgia_Comment_2} name="star" size={20} color="white" />
+                                    <Icon_3 style={styles.Danhgia_Comment_2} name="star" size={20} color="white" />
+                                    <Icon_3 style={styles.Danhgia_Comment_2} name="star" size={20} color="white" />
+                                    <Icon_3 style={styles.Danhgia_Comment_2} name="star" size={20} color="white" />
+                                    <Icon_3 style={styles.Danhgia_Comment_2} name="star-half-full" size={20} color="white" />
+                                    <Text style={styles.Danhgia_Comment_3}>( 136 )</Text>
+                                </View>
+                                <View style={styles.Danhgia_Comment_1}>
+                                    <View>
+                                        <Text style={styles.Danhgia_Comment_4}>4.4/5.0</Text>
+                                        <Text style={styles.Danhgia_Comment_4}>NỘI DUNG</Text>
+                                    </View>
+                                    <View style={styles.verticalLine}></View>
+                                    <View>
+                                        <Text style={styles.Danhgia_Comment_5}>4.6/5.0</Text>
+                                        <Text style={styles.Danhgia_Comment_5}>GIỌNG ĐỌC</Text>
+                                    </View>
+                                </View>
+                            </View>
+                        </View>
+                    </View>
+                    <View>
+                        <View style={styles.Comment_DocGia}>
+                            <View style={styles.icon_Container_1}>
+                                <Text style={styles.Comment_DocGia_7}>Rất hay</Text>
+                                <Icon_2 name="like1" size={25} color="black" />
+                            </View>
+                            <Text style={styles.Comment_DocGia_8}>BỞI TRẦN THỨC VÀO 26/8/2023</Text>
+                            <View style={styles.Comment_DocGia_1}>
+                                <Text style={styles.Comment_DocGia_8}>NỘI DUNG</Text>
+                                <View style={styles.Comment_DocGia_3}>
+                                    <Icon_3 style={styles.Comment_DocGia_4} name="star" size={20} color="white" />
+                                    <Icon_3 style={styles.Comment_DocGia_4} name="star" size={20} color="white" />
+                                    <Icon_3 style={styles.Comment_DocGia_4} name="star" size={20} color="white" />
+                                    <Icon_3 style={styles.Comment_DocGia_4} name="star" size={20} color="white" />
+                                    <Icon_3 style={styles.Comment_DocGia_4} name="star" size={20} color="white" />
+                                </View>
+                            </View>
+                            <View style={styles.Comment_DocGia_1}>
+                                <Text style={styles.Comment_DocGia_8}>GIỌNG ĐỌC</Text>
+                                <View style={styles.Comment_DocGia_5}>
+                                    <Icon_3 style={styles.Comment_DocGia_6} name="star" size={20} color="white" />
+                                    <Icon_3 style={styles.Comment_DocGia_6} name="star" size={20} color="white" />
+                                    <Icon_3 style={styles.Comment_DocGia_6} name="star" size={20} color="white" />
+                                    <Icon_3 style={styles.Comment_DocGia_6} name="star" size={20} color="white" />
+                                    <Icon_3 style={styles.Comment_DocGia_6} name="star" size={20} color="white" />
+                                </View>
+                            </View>
+                        </View>
+                        <TouchableOpacity>
+                            <Text style={styles.Comment_DocGia_2}>Xem tất cả 136 đánh giá</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.Separator}></View>
+                    <Text style={styles.Mucluc_1}>Mục lục</Text>
                 </View>
+
             </ScrollView >
         </View>
     )
@@ -205,7 +204,6 @@ const styles = StyleSheet.create({
 
     },
     Content_Container: {
-        backgroundColor: 'white',
         borderRadius: 20,
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
@@ -213,7 +211,7 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 0,
         paddingLeft: 20,
         paddingRight: 20,
-        marginTop: 10,
+        paddingTop: 10,
     },
     icon_Container: {
         flexDirection: 'row',
@@ -266,24 +264,26 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginLeft: 5,
     },
-    NgheFree_Container: {
+    BtnPlay_Container: {
         paddingLeft: 20,
         paddingRight: 20,
         paddingTop: 10,
-        alignItems: 'center',
-        flexDirection:'row',
-        justifyContent:'center'
-    },
-    NgheFree_1: {
+        flex: 1,
         flexDirection: 'row',
-        height: 50,
-        width: 120,
+        justifyContent: 'space-between',
+        alignItems: 'center'
+    },
+    btnPlay: {
+        flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#8B864E',
-        borderRadius: 30,
+        width: 150,
+        height: 50,
+        backgroundColor: '#6E7B8B',
+        borderRadius: 20
+
     },
-    NgheFree_1_1: {
+    btnPlayText: {
         color: 'white',
         fontSize: 20,
         paddingLeft: 10,

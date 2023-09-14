@@ -10,6 +10,11 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import PlayScreen from '../components/screens/play/PlayScreen';
 import { connect } from 'react-redux';
 import ScreenWrapper from '../components/screens/ScreenWrapper';
+import SwipeToChangeBackground from '../components/screens/SwipeToChangeBackground';
+import Detail from '../components/screens/detail/Detail';
+import HotScreen from '../components/screens/hot/HotScreen';
+import SearchBook from '../components/screens/search/SearchBook';
+import ItemListView from '../components/screens/hot/ItemListView';
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const Users = () => {
@@ -44,7 +49,7 @@ const Home = ({ scrollY }) => {
                 headerShown: false,
                 color: 'red',
                 tabBarLabelStyle: { fontSize: 15 },
-                tabBarStyle: { height: 60, borderRadius: 20,display: isTabVisible, },
+                tabBarStyle: { height: 60, borderRadius: 20, display: isTabVisible, },
             })}
         >
             <Tab.Screen
@@ -92,7 +97,7 @@ const Home = ({ scrollY }) => {
             >
                 {() => (
                     <ScreenWrapper>
-                        <FavouriteScreen />
+                            <HotScreen />
                     </ScreenWrapper>
                 )}
             </Tab.Screen>
@@ -127,16 +132,30 @@ const Play = () => {
             }}
         >
             <Stack.Screen name="Home">
-                {props => (
+                {(props) => (
                     <ScreenWrapper>
-                        <HomeScreen {...props} />
+                        <SwipeToChangeBackground navigation={props.navigation} />
                     </ScreenWrapper>
                 )}
             </Stack.Screen>
-            <Stack.Screen name="Play">
-                {props => (
+            <Stack.Screen name="Detail">
+                {(props) => (
                     <ScreenWrapper>
-                        <PlayScreen {...props} />
+                        <Detail navigation={props.navigation} />
+                    </ScreenWrapper>
+                )}
+            </Stack.Screen>
+            <Stack.Screen name="Search">
+                {(props) => (
+                    <ScreenWrapper>
+                        <SearchBook navigation={props.navigation} />
+                    </ScreenWrapper>
+                )}
+            </Stack.Screen>
+            <Stack.Screen name="Hot">
+                {(props) => (
+                    <ScreenWrapper>
+                        <HotScreen navigation={props.navigation} />
                     </ScreenWrapper>
                 )}
             </Stack.Screen>

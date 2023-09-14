@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity, Animated } from 'react-native'
 import React, { useState } from 'react'
 import Icon from 'react-native-vector-icons/AntDesign';
+import { connect, useDispatch, useSelector } from 'react-redux';
+import { useNavigation } from '@react-navigation/native';
 
-
-const ItemListView = (props) => {
-    const { dulieu, navigation } = props;
-
+const ItemListView = ({ dulieu }) => {
+    const dispatch = useDispatch();
+    const navigation = useNavigation();
     const [isLiked, setIsLiked] = useState(false);
     const [scaleValue] = useState(new Animated.Value(1));
     const handleLike = () => {
@@ -13,8 +14,12 @@ const ItemListView = (props) => {
         animateIcon();
 
     };
+    const handlePlay = () => {
+        navigation.navigate('Home');
+        dispatch({ type: 'SET_IS_PLAY', payload: true });
+    };
 
-  
+
     const animateIcon = () => {
         Animated.sequence([
             Animated.timing(scaleValue, {
@@ -50,16 +55,19 @@ const ItemListView = (props) => {
                     <Image style={styles.image} source={{ uri: dulieu.image }} />
                     <View style={styles.iconimage}>
                         <Text style={{ color: "#000000", fontFamily: 'Poppins-Medium', fontSize: 16 }} >{dulieu.category}</Text>
-                        <Text style={{  marginTop: 3, fontSize: 16 ,fontFamily: 'Poppins-Medium'}}>Kinh Doanh - Lãnh Đạo</Text>
+                        <Text style={{ marginTop: 3, fontSize: 16, fontFamily: 'Poppins-Medium' }}>Kinh Doanh - Lãnh Đạo</Text>
                         <View style={{ width: 200, flexDirection: 'row', justifyContent: 'space-between' }}>
 
 
-                            <View style={styles.click}>
+                            <TouchableOpacity
+                                style={styles.click}
+                                onPress={handlePlay}
+                            >
                                 <Icon name="playcircleo" size={20} color='black' />
-                                <Text style={{ fontSize: 14, textAlign: 'center',fontFamily: 'Poppins-Medium' }}>
+                                <Text style={{ fontSize: 14, textAlign: 'center', fontFamily: 'Poppins-Medium' }}>
                                     Nghe
                                 </Text>
-                            </View>
+                            </TouchableOpacity>
                             <View style={styles.click}>
                                 <TouchableOpacity onPress={handleLike}>
                                     <Animated.View style={animatedStyle}>
@@ -73,7 +81,7 @@ const ItemListView = (props) => {
 
                                 {isLiked && <Text style={{ fontSize: 14, textAlign: 'center', fontFamily: 'Poppins-Medium' }}>
                                     Đã thích
-                                </Text> || <Text style={{ fontSize: 14, textAlign: 'center',fontFamily: 'Poppins-Medium' }}>
+                                </Text> || <Text style={{ fontSize: 14, textAlign: 'center', fontFamily: 'Poppins-Medium' }}>
                                         Yêu thích
                                     </Text>}
 
@@ -108,11 +116,9 @@ export default ItemListView
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#F0F2FF',
-        height: 230,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        marginBottom: 10,
     }, datetime: {
-        height: 300,
         width: 60
     }, body: {
         width: '100%',
@@ -165,13 +171,13 @@ const styles = StyleSheet.create({
         fontFamily: 'Poppins-Medium',
         color: '#000000',
         marginTop: 7,
-        
+
     },
     content: {
         fontSize: 14,
         marginTop: 2,
         fontFamily: 'Poppins-Medium',
-        marginBottom:15
+        marginBottom: 15
     },
     chi: {
         width: 320,

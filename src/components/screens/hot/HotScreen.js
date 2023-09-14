@@ -1,13 +1,13 @@
 import {
     StyleSheet, Text,
     View, Image, ScrollView,
-    FlatList, Animated
+    FlatList, Animated,StatusBar
 } from 'react-native'
 import React from 'react'
 import ItemListView from './ItemListView';
 const HotScreen = (props) => {
     const HEADER_HEIGHT = 200;
-    const scrollY = new Animated.Value(0);
+    const scrollY = new Animated.Value(0); 
     const { navigation } = props;
     const handleScroll = Animated.event(
         [{ nativeEvent: { contentOffset: { y: scrollY } } }],
@@ -55,7 +55,7 @@ const HotScreen = (props) => {
 export default HotScreen
 
 const styles = StyleSheet.create({
-    container: { flex: 1 },
+    container: { flex: 1,paddingTop:'6%' },
     Headers: {
         flex: 1,
         flexDirection: 'row',
@@ -85,11 +85,9 @@ const styles = StyleSheet.create({
     }, body: {
         flex: 8,
         flexDirection: 'column',
-        backgroundColor: "#575294",
     },
     header: {
         flexDirection: 'row',
-        backgroundColor: "#FFFFFF",
         width: "100%",
         height: 30,
         borderTopLeftRadius: 40, // Bo góc trên bên trái

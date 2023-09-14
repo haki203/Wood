@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Dimensions, Platform, TouchableOpacity, ScrollView } from 'react-native';
-import React ,{useRef,useEffect}from 'react';
+import React, { useRef, useEffect } from 'react';
 import ScreenWrapper from '../ScreenWrapper';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,42 +23,41 @@ const DBYear = () => {
     const scrollViewRef = useRef(null);
     useEffect(() => {
         scrollViewRef.current.scrollTo({ y: initialScrollY, animated: false });
-      }, []);
+    }, []);
     return (
-        <ScreenWrapper>
-            <View style={styles.container}>
-                <View style={styles.bottomSheet}>
-                    <View style={{
-                        flexDirection: 'row', alignItems: 'center', marginBottom: 10, width: '100%',
-                        justifyContent: 'space-between',
-                        padding: 25,
-                        paddingBottom: 15
+        <ScreenWrapper style={styles.container}>
+
+            <View style={styles.bottomSheet}>
+                <View style={{
+                    flexDirection: 'row', alignItems: 'center', marginBottom: 10, width: '100%',
+                    justifyContent: 'space-between',
+                    padding: 25,
+                    paddingBottom: 15
+                }}>
+                    <Text style={{ fontSize: 22, color: '#00004d', fontFamily: "Poppins-Bold", }}>Vui lòng chọn</Text>
+                    <TouchableOpacity onPress={handleToggle} style={{
+                        height: 32, width: 32, backgroundColor: '#e6ecff',
+                        alignItems: 'center', justifyContent: 'center',
+                        borderRadius: 100, end: 0
                     }}>
-                        <Text style={{ fontSize: 22, color: '#00004d', fontFamily: "Poppins-Bold", }}>Vui lòng chọn</Text>
-                        <TouchableOpacity onPress={handleToggle} style={{
-                            height: 32, width: 32, backgroundColor: '#e6ecff',
-                            alignItems: 'center', justifyContent: 'center',
-                            borderRadius: 100, end: 0
-                        }}>
-                            <Icon name="times" color={'#00004d'} size={16} />
-                        </TouchableOpacity>
-                    </View>
-                    <ScrollView
-                        contentContainerStyle={styles.scrollView}
-                        ref={scrollViewRef}
-                    >
-                        {years.map((year, index) => (
-                            <TouchableOpacity onPress={()=>handleSetYear(year)}
-                                key={year}
-                                style={[
-                                    styles.yearItem,
-                                ]}
-                            >
-                                <Text style={styles.yearText}>{year}</Text>
-                            </TouchableOpacity>
-                        ))}
-                    </ScrollView>
+                        <Icon name="times" color={'#00004d'} size={16} />
+                    </TouchableOpacity>
                 </View>
+                <ScrollView
+                    contentContainerStyle={styles.scrollView}
+                    ref={scrollViewRef}
+                >
+                    {years.map((year, index) => (
+                        <TouchableOpacity onPress={() => handleSetYear(year)}
+                            key={year}
+                            style={[
+                                styles.yearItem,
+                            ]}
+                        >
+                            <Text style={styles.yearText}>{year}</Text>
+                        </TouchableOpacity>
+                    ))}
+                </ScrollView>
             </View>
         </ScreenWrapper>
 
@@ -69,7 +68,8 @@ export default DBYear
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        height:height
     },
     bottomSheet: {
         position: 'absolute',
@@ -82,9 +82,9 @@ const styles = StyleSheet.create({
         ...Platform.select({
             android: { elevation: 3 },
         }),
+        padding: 0
     },
     optionContainer: {
-        height: 45,
         justifyContent: 'center',
         marginTop: 8
     },
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap',
     },
     yearItem: {
-        width: '100%', // 32% để có 3 item trên một hàng và cách nhau
+        width: '100%',
         backgroundColor: 'white',
         alignItems: 'center',
         justifyContent: 'center',
@@ -104,8 +104,8 @@ const styles = StyleSheet.create({
         borderColor: '#ccc',
         height: 60,
         borderWidth: 0,
-        borderBottomWidth:1,
-        borderRadius:10
+        borderBottomWidth: 1,
+        borderRadius: 10
     },
     yearText: {
         fontSize: 22,

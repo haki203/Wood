@@ -55,20 +55,17 @@ export default DBGender
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
     },
     bottomSheet: {
         position: 'absolute',
         width: '100%',
         height: height * 0.4,
         backgroundColor: 'white',
-        bottom: 0,
         borderTopLeftRadius: 40,
         borderTopRightRadius: 40,
-        ...Platform.select({
-            android: { elevation: 3 },
-        }),
-        padding: 25
+
+        padding: 25,
+        bottom:0,
     },
     optionContainer: {
         height: 45,

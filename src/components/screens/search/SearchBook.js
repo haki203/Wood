@@ -1,15 +1,46 @@
-import { View, Text, StyleSheet, Dimensions, TextInput, Image, TouchableOpacity, ScrollView, FlatList, TouchableWithoutFeedback, Keyboard } from 'react-native'
+import { View, Text, StyleSheet, Dimensions, TextInput, Image, TouchableOpacity, ScrollView, StatusBar, FlatList, TouchableWithoutFeedback, Keyboard } from 'react-native'
 import React, { useState, useReducer, useEffect } from 'react'
 import ListBook from './ListBook';
 const { height } = Dimensions.get('window');
 const fontText = 'Poppins-Medium';
+const sizeIcon = 27;
+const colorIcon = '#00004d';
 const colorBtnFocus = '#ccf5ff';
+import Icon from 'react-native-vector-icons/FontAwesome';
 const colorTextFocus = '#cccccc';
-const srcImage='../../../assets/images/';
+import { useDispatch } from 'react-redux';
+import { scrollDown } from '../../../actions/scrollActions';
 const SearchBook = (props) => {
   const { navigation } = props;
-  // const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState('');
   const [isPressed, setIsPressed] = useState(0);
+  const [dataSearch, setDataSearch] = useState('');
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(scrollDown());
+  }, []);
+  useEffect(() => {
+    setIsPressed(3)
+    let search = searchText.toLowerCase(); // Chuyển searchText thành chữ thường để không phân biệt chữ hoa, chữ thường
+
+    if (search.length > 0) {
+      data.forEach((item, index) => {
+        const itemName = item.name.toLowerCase(); // Chuyển tên item thành chữ thường
+        const filteredData = data.filter(item =>
+          item.name.toLowerCase().includes(searchText.toLowerCase())
+        );
+        setDataSearch(filteredData);
+      });
+    }
+    else {
+      setDataSearch('')
+      setIsPressed(0)
+    }
+    console.log(dataSearch);
+
+  }, [searchText]);
 
   const handleBtnHeader = (num) => {
     switch (num) {
@@ -32,13 +63,28 @@ const SearchBook = (props) => {
   return (
     <TouchableWithoutFeedback onPress={handleScreenPress}>
       <View style={styles.container}>
+        <StatusBar translucent={true} backgroundColor={'#6b73ba'} barStyle="dark-content" />
         <View style={styles.headerContainer}>
           <View style={styles.searchContainer}>
-            <TextInput
-              underlineColorAndroid="transparent" placeholder='Tìm kiếm sách, tác giả' style={[styles.search, { backgroundColor: 'hsla(240, 60%, 80%, 0.5)' }]}>
-            </TextInput>
-            <Image style={styles.icon} source={require('../../../assets/images/search-white.png')}></Image>
-            <Text style={styles.huy}>Hủy</Text>
+            <View style={{ flexDirection: 'row', width: '80%', justifyContent: 'center', alignItems: 'center' }}>
+              <TextInput value={searchText} onChangeText={(text) => setSearchText(text)}
+                underlineColorAndroid="transparent" placeholder='Tìm kiếm sách, tác giả' style={styles.search}>
+              </TextInput>
+              <Image style={styles.iconSearch} source={require('../../../assets/images/search-white.png')}></Image>
+              {
+                (searchText.length > 0) ?
+                  <View style={{ justifyContent: 'center' }}>
+                    <TouchableOpacity onPress={() => setSearchText("")} style={styles.iconCancel}>
+                      <Icon name="times" color={'#E4EBF5'} size={20} />
+                    </TouchableOpacity>
+                  </View>
+                  :
+                  <View></View>
+              }
+            </View>
+            <TouchableOpacity style={{ position: 'absolute', end: 10 }} onPress={() => navigation.goBack()}>
+              <Text style={styles.huy}>Hủy</Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.btnHeaderContainer}>
             <View style={styles.btnItem}>
@@ -77,7 +123,12 @@ const SearchBook = (props) => {
           </View>
         </View>
         <View style={styles.listContainer}>
-          <ListBook isPressed={isPressed} data={data} />
+          {
+            (isPressed === 3) ?
+              <View style={{width:'100%',height:'100%'}}><ListBook isPressed={isPressed} data={dataSearch} /></View>
+              :
+              <View style={{width:'100%',height:'100%'}}><ListBook isPressed={isPressed} data={data} /></View>
+          }
         </View>
       </View>
     </TouchableWithoutFeedback>
@@ -105,8 +156,36 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   searchContainer: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
+  search: {
+    height: 55,
+    borderWidth: 1,
+    borderColor: '#6b73ba',
+    borderRadius: 15,
+    color: '#FFFFFF',
+    width: '100%',
+    backgroundColor: 'hsla(240, 60%, 80%, 0.5)',
+    paddingLeft: 36,
+    fontSize: 16
+  },
+  iconSearch: {
+    position: 'absolute',
+    start: 2
+  },
+  iconCancel: {
+    position: 'absolute',
+    end: 10
+  },
+  huy: {
+    fontSize: 16,
+    fontWeight: '400',
+    fontStyle: 'normal',
+    color: '#FFFFFF',
+  },
+
   btnHeaderContainer: {
     paddingBottom: 20,
     flexDirection: 'row',
@@ -137,32 +216,8 @@ const styles = StyleSheet.create({
     fontFamily: fontText,
   },
 
-  search: {
-    width: 320,
-    height: 55,
-    borderWidth: 1,
-    borderColor: '#6b73ba',
-    borderRadius: 15,
-    marginTop: 15,
-    marginLeft: 25,
-    paddingStart: 60,
-    color: '#FFFFFF'
-  },
-  huy: {
-    padding: 20,
-    marginTop: 10,
-    fontSize: 16,
-    fontWeight: '400',
-    fontStyle: 'normal',
-    color: '#FFFFFF'
-  },
-  icon: {
-    width: 35,
-    height: 35,
-    position: 'absolute',
-    marginLeft: 47,
-    marginTop: 25
-  },
+
+
   danhsach: {
     fontSize: 23,
     fontWeight: '600',
@@ -179,7 +234,7 @@ export default SearchBook;
 const data = [{
   "id": "12c1ee57-768f-4f22-a48e-83f786e2c605",
   "category": "audiobook",
-  "name": "North Perry Airport",
+  "name": "Chim chí chi",
   "image": "http://dummyimage.com/229x100.png/dddddd/000000"
 }, {
   "id": "7e2cfceb-b4bd-4b63-aa17-70dc8753b58e",
@@ -189,17 +244,17 @@ const data = [{
 }, {
   "id": "1",
   "category": "ebook",
-  "name": "North Perry Airport",
+  "name": "Kivu gà",
   "image": "http://dummyimage.com/151x100.png/5fa2dd/ffffff"
 }, {
   "id": "2",
   "category": "audiobook",
-  "name": "North Perry Airport",
+  "name": "CCCCCCCC duma",
   "image": "http://dummyimage.com/139x100.png/ff4444/ffffff"
 }, {
   "id": "3",
   "category": "audiobook",
-  "name": "North Perry Airport",
+  "name": "Chó Perry Airport",
   "image": "http://dummyimage.com/238x100.png/5fa2dd/ffffff"
 }, {
   "id": "4",
@@ -209,22 +264,22 @@ const data = [{
 }, {
   "id": "5",
   "category": "ebook",
-  "name": "North Perry Airport",
+  "name": "ABC Perry Airport",
   "image": "http://dummyimage.com/134x100.png/dddddd/000000"
 }, {
   "id": "6",
   "category": "ebook",
-  "name": "North Perry Airport",
+  "name": "DDD Perry Airport",
   "image": "http://dummyimage.com/233x100.png/ff4444/ffffff"
 }, {
   "id": "7",
   "category": "E Book",
-  "name": "North Perry Airport",
+  "name": "EEE Perry Airport",
   "image": "http://dummyimage.com/142x100.png/dddddd/000000"
 }, {
   "id": "8",
   "category": "audiobook",
-  "name": "North Perry Airport",
+  "name": "a Perry Airport",
   "image": "http://dummyimage.com/197x100.png/cc0000/ffffff"
 }];
 

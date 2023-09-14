@@ -5,6 +5,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import PlayScreen from '../play/PlayScreen';
 import { connect } from 'react-redux'; // Import connect từ react-redux
 import { scrollUp, scrollDown } from '../../../actions/scrollActions';
+const colorText = "#00004d";
+const fontText = "Poppins-Medium";
 const { width, height } = Dimensions.get('window');
 
 class HomeScreen extends Component {
@@ -31,9 +33,12 @@ class HomeScreen extends Component {
         this.animatedValue = new Animated.Value(0);
     }
     handleBookSelection = () => {
-        this.props.toggleIsPlay();
+        // this.props.toggleIsPlay();
+        this.props.navigation.navigate('Detail')
 
     };
+
+
     renderItem = ({ item }) => {
         return (
             <View style={{}}>
@@ -84,8 +89,10 @@ class HomeScreen extends Component {
                     <Text style={styles.name}>Worm</Text>
                 </View>
                 <View style={styles.rightHeader}>
-                    <Icon style={{ marginRight: 10 }} name="search" color={'white'} size={25} />
-                    <Icon name="cog" color={'white'} size={28} />
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Search')}>
+                        <Icon style={{ marginRight: 10 }} name="search" color={colorText} size={25} />
+                    </TouchableOpacity>
+                    <Icon name="cog" color={colorText} size={28} />
                 </View>
             </View>
 
@@ -95,7 +102,7 @@ class HomeScreen extends Component {
         return (
             <View style={styles.listCategoryContainer}>
                 <View style={styles.categoryNameContainer}>
-                    <Text style={[styles.categoryName,{paddingTop: 20}]}>Danh mục</Text>
+                    <Text style={[styles.categoryName, { paddingTop: 20 }]}>Danh mục</Text>
                 </View>
                 <View style={styles.listCategory}>
                     <FlatList
@@ -113,26 +120,15 @@ class HomeScreen extends Component {
 
     /*---------------------------------------------*/
     render() {
-
-        const { isPlay } = this.props;
-        if (isPlay) {
-            return (
-                <View style={{ flex: 1 }} {...this.panResponder.panHandlers}>
-                    <PlayScreen />
-                </View>
-
-            );
-        }
-
         return (
-            <LinearGradient style={styles.container} colors={[ '#e6f2ff','#cce6ff']}>
+            <LinearGradient style={styles.container} colors={['#e6f2ff', '#cce6ff']}>
                 {this.renderHeader()}
 
                 <View style={{}}>
                     <ScrollView
                         showsHorizontalScrollIndicator={false}
                         showsVerticalScrollIndicator={false}
-                        onScroll={this.handleScroll }
+                        onScroll={this.handleScroll}
                         scrollEventThrottle={16}
                     >
                         {this.renderCategoryList()}
@@ -211,7 +207,7 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
         width: width,
         height: height,
-        paddingBottom:50
+        paddingBottom: 50
 
     },
     bookContainer: {
@@ -236,7 +232,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         height: 60,
-        paddingRight:10
+        paddingRight: 10
     },
     leftHeader: {
         flexDirection: 'row',
@@ -256,7 +252,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: 'black',
         fontFamily: 'Poppins-Black',
-        
+
     },
     itemCategory: {
         paddingVertical: 10,
@@ -293,7 +289,8 @@ const styles = StyleSheet.create({
         height: 35,
     },
     name: {
-        color: 'white',
+        color: colorText,
+        fontFamily: fontText,
         fontSize: 18,
         marginLeft: 10
     },

@@ -18,7 +18,7 @@ export default function SwipeToChangeBackground(props) {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        setHeight(50)
+        setHeight(height)
         console.log(heightView);
       }, []);
 

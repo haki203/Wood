@@ -1,26 +1,42 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, Text, View, LogBox, Image, } from 'react-native';
 import { Provider } from 'react-redux';
 import store from './store/store';
-import SwipeToChangeBackground from './components/screens/SwipeToChangeBackground';
-import HotScreen from './components/screens/hot/HotScreen';
-import SearchBook from './components/screens/search/SearchBook';
-import Detail from './components/screens/detail/Detail';
-import ProfileInputScreen from './components/screens/user/ProfileInputScreen';
-import ScreenWrapper from './components/screens/ScreenWrapper';
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 import LinearGradient from 'react-native-linear-gradient';
 import { NavigationContainer } from '@react-navigation/native';
 import AppNavigator from './navigation/AppNavigator';
+import User from './components/screens/user/User';
+import firebase from '@react-native-firebase/app';
+const credentials = {
+  clientId: '1:421293673425:android:7dec49524bbbc7fed1aef0',
+  appId: '1:421293673425:android:7dec49524bbbc7fed1aef0',
+  apiKey: 'AIzaSyBNHRRUMNzcm5Bm-Pk_wvw2C7pTjXLrtyE',
+  databaseURL: 'https://worm-70d77.firebaseio.com',
+  storageBucket: 'worm-70d77.appspot.com',
+  messagingSenderId: '421293673425',
+  projectId: 'worm-70d77',
+};
+const config = {
+  name: 'worm',
+};
+const initializeFirebase = async () => {
+  await firebase.initializeApp(credentials, config);
+};
 const App = () => {
+  useEffect(() => {
+    initializeFirebase(); // Gọi hàm async ở đây
+  }, []);
   return (
-    <Provider store={store}>
-      <LinearGradient style={styles.container} colors={['#e6f2ff', '#cce6ff']}>
-        <NavigationContainer>
-          <AppNavigator />
-        </NavigationContainer>
-      </LinearGradient>
-    </Provider>
-
+    // <Provider store={store}>
+    //   <LinearGradient style={styles.container} colors={['#e6f2ff', '#cce6ff']}>
+    //     <NavigationContainer>
+    //       <AppNavigator />
+    //     </NavigationContainer>
+    //   </LinearGradient>
+    // </Provider>
+    <User />
     // <Provider store={store}>
     //   <ScreenWrapper >
     //     <View  style={{flex:1,}}><ProfileInputScreen/></View>
@@ -37,4 +53,5 @@ const styles = StyleSheet.create({
     backgroundColor: 'black'
   },
 });
+
 export default App;

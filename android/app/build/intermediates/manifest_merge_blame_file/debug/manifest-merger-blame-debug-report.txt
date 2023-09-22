@@ -15,149 +15,303 @@
 12-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:3:5-67
 12-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:3:22-64
 13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-13-->[com.facebook.flipper:flipper:0.182.0] C:\Users\tho38\.gradle\caches\transforms-3\bd18304b20e6fdaf3e3425e5d35bd51e\transformed\jetified-flipper-0.182.0\AndroidManifest.xml:16:5-76
-13-->[com.facebook.flipper:flipper:0.182.0] C:\Users\tho38\.gradle\caches\transforms-3\bd18304b20e6fdaf3e3425e5d35bd51e\transformed\jetified-flipper-0.182.0\AndroidManifest.xml:16:22-73
+13-->[com.facebook.flipper:flipper:0.182.0] C:\Users\tho38\.gradle\caches\transforms-3\b9da9aa808622203588af39fe0091bd9\transformed\jetified-flipper-0.182.0\AndroidManifest.xml:16:5-76
+13-->[com.facebook.flipper:flipper:0.182.0] C:\Users\tho38\.gradle\caches\transforms-3\b9da9aa808622203588af39fe0091bd9\transformed\jetified-flipper-0.182.0\AndroidManifest.xml:16:22-73
 14    <uses-permission android:name="android.permission.WAKE_LOCK" />
 14-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-68
 14-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:7:22-65
-15    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+15    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
 15-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-77
 15-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:8:22-74
-16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-16-->[com.google.android.exoplayer:exoplayer-core:2.18.1] C:\Users\tho38\.gradle\caches\transforms-3\cb372dc11704a3ffd0cca9e6459034a9\transformed\jetified-exoplayer-core-2.18.1\AndroidManifest.xml:24:5-79
-16-->[com.google.android.exoplayer:exoplayer-core:2.18.1] C:\Users\tho38\.gradle\caches\transforms-3\cb372dc11704a3ffd0cca9e6459034a9\transformed\jetified-exoplayer-core-2.18.1\AndroidManifest.xml:24:22-76
-17
-18    <permission
-18-->[androidx.core:core:1.9.0] C:\Users\tho38\.gradle\caches\transforms-3\0d9081b1defcfc12625845badd9b93a6\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
-19        android:name="com.worm.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-19-->[androidx.core:core:1.9.0] C:\Users\tho38\.gradle\caches\transforms-3\0d9081b1defcfc12625845badd9b93a6\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
-20        android:protectionLevel="signature" />
-20-->[androidx.core:core:1.9.0] C:\Users\tho38\.gradle\caches\transforms-3\0d9081b1defcfc12625845badd9b93a6\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
-21
-22    <uses-permission android:name="com.worm.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-22-->[androidx.core:core:1.9.0] C:\Users\tho38\.gradle\caches\transforms-3\0d9081b1defcfc12625845badd9b93a6\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-22-->[androidx.core:core:1.9.0] C:\Users\tho38\.gradle\caches\transforms-3\0d9081b1defcfc12625845badd9b93a6\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
-23
-24    <queries>
-24-->[androidx.test:runner:1.4.0] C:\Users\tho38\.gradle\caches\transforms-3\8e12a35ae6466506c613642ca9bba171\transformed\runner-1.4.0\AndroidManifest.xml:24:5-28:15
-25        <package android:name="androidx.test.orchestrator" />
-25-->[androidx.test:runner:1.4.0] C:\Users\tho38\.gradle\caches\transforms-3\8e12a35ae6466506c613642ca9bba171\transformed\runner-1.4.0\AndroidManifest.xml:25:9-62
-25-->[androidx.test:runner:1.4.0] C:\Users\tho38\.gradle\caches\transforms-3\8e12a35ae6466506c613642ca9bba171\transformed\runner-1.4.0\AndroidManifest.xml:25:18-59
-26        <package android:name="androidx.test.services" />
-26-->[androidx.test:runner:1.4.0] C:\Users\tho38\.gradle\caches\transforms-3\8e12a35ae6466506c613642ca9bba171\transformed\runner-1.4.0\AndroidManifest.xml:26:9-58
-26-->[androidx.test:runner:1.4.0] C:\Users\tho38\.gradle\caches\transforms-3\8e12a35ae6466506c613642ca9bba171\transformed\runner-1.4.0\AndroidManifest.xml:26:18-55
-27        <package android:name="com.google.android.apps.common.testing.services" />
-27-->[androidx.test:runner:1.4.0] C:\Users\tho38\.gradle\caches\transforms-3\8e12a35ae6466506c613642ca9bba171\transformed\runner-1.4.0\AndroidManifest.xml:27:9-83
-27-->[androidx.test:runner:1.4.0] C:\Users\tho38\.gradle\caches\transforms-3\8e12a35ae6466506c613642ca9bba171\transformed\runner-1.4.0\AndroidManifest.xml:27:18-80
-28    </queries>
-29
-30    <application
-30-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:5:5-24:19
-31        android:name="com.worm.MainApplication"
-31-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:6:7-38
-32        android:allowBackup="false"
-32-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:10:7-34
-33        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-33-->[androidx.core:core:1.9.0] C:\Users\tho38\.gradle\caches\transforms-3\0d9081b1defcfc12625845badd9b93a6\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
-34        android:debuggable="true"
-35        android:icon="@mipmap/ic_launcher"
-35-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:8:7-41
-36        android:label="@string/app_name"
-36-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:7:7-39
-37        android:roundIcon="@mipmap/ic_launcher_round"
-37-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:9:7-52
-38        android:theme="@style/AppTheme"
-38-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:11:7-38
-39        android:usesCleartextTraffic="true" >
-39-->C:\Users\tho38\Desktop\Wood\android\app\src\debug\AndroidManifest.xml:8:9-44
-40        <activity
-40-->C:\Users\tho38\Desktop\Wood\android\app\src\debug\AndroidManifest.xml:11:9-111
-41            android:name="com.facebook.react.devsupport.DevSettingsActivity"
-41-->C:\Users\tho38\Desktop\Wood\android\app\src\debug\AndroidManifest.xml:11:19-83
-42            android:exported="false" />
-42-->C:\Users\tho38\Desktop\Wood\android\app\src\debug\AndroidManifest.xml:11:84-108
+16    <!-- <uses-sdk android:minSdkVersion="14" /> -->
+17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+17-->[com.google.firebase:firebase-firestore:24.8.1] C:\Users\tho38\.gradle\caches\transforms-3\f98ee9d5e4ed39ba6e4428233be80fc8\transformed\jetified-firebase-firestore-24.8.1\AndroidManifest.xml:10:5-79
+17-->[com.google.firebase:firebase-firestore:24.8.1] C:\Users\tho38\.gradle\caches\transforms-3\f98ee9d5e4ed39ba6e4428233be80fc8\transformed\jetified-firebase-firestore-24.8.1\AndroidManifest.xml:10:22-76
+18    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+18-->[com.google.android.gms:play-services-measurement-api:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\01877454179adc8939afa110cc166814\transformed\jetified-play-services-measurement-api-21.3.0\AndroidManifest.xml:25:5-79
+18-->[com.google.android.gms:play-services-measurement-api:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\01877454179adc8939afa110cc166814\transformed\jetified-play-services-measurement-api-21.3.0\AndroidManifest.xml:25:22-76
+19    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+19-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\78c719ea0d5b332151b5754ca79619bf\transformed\jetified-play-services-measurement-21.3.0\AndroidManifest.xml:26:5-110
+19-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\78c719ea0d5b332151b5754ca79619bf\transformed\jetified-play-services-measurement-21.3.0\AndroidManifest.xml:26:22-107
+20
+21    <permission
+21-->[androidx.core:core:1.9.0] C:\Users\tho38\.gradle\caches\transforms-3\c63a62103b867342539b62938bf9771b\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+22        android:name="com.worm.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+22-->[androidx.core:core:1.9.0] C:\Users\tho38\.gradle\caches\transforms-3\c63a62103b867342539b62938bf9771b\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+23        android:protectionLevel="signature" />
+23-->[androidx.core:core:1.9.0] C:\Users\tho38\.gradle\caches\transforms-3\c63a62103b867342539b62938bf9771b\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+24
+25    <uses-permission android:name="com.worm.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+25-->[androidx.core:core:1.9.0] C:\Users\tho38\.gradle\caches\transforms-3\c63a62103b867342539b62938bf9771b\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+25-->[androidx.core:core:1.9.0] C:\Users\tho38\.gradle\caches\transforms-3\c63a62103b867342539b62938bf9771b\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+26
+27    <queries>
+27-->[androidx.test:runner:1.4.0] C:\Users\tho38\.gradle\caches\transforms-3\5fbed90b113cf4e4f9fea84649ff77c0\transformed\runner-1.4.0\AndroidManifest.xml:24:5-28:15
+28        <package android:name="androidx.test.orchestrator" />
+28-->[androidx.test:runner:1.4.0] C:\Users\tho38\.gradle\caches\transforms-3\5fbed90b113cf4e4f9fea84649ff77c0\transformed\runner-1.4.0\AndroidManifest.xml:25:9-62
+28-->[androidx.test:runner:1.4.0] C:\Users\tho38\.gradle\caches\transforms-3\5fbed90b113cf4e4f9fea84649ff77c0\transformed\runner-1.4.0\AndroidManifest.xml:25:18-59
+29        <package android:name="androidx.test.services" />
+29-->[androidx.test:runner:1.4.0] C:\Users\tho38\.gradle\caches\transforms-3\5fbed90b113cf4e4f9fea84649ff77c0\transformed\runner-1.4.0\AndroidManifest.xml:26:9-58
+29-->[androidx.test:runner:1.4.0] C:\Users\tho38\.gradle\caches\transforms-3\5fbed90b113cf4e4f9fea84649ff77c0\transformed\runner-1.4.0\AndroidManifest.xml:26:18-55
+30        <package android:name="com.google.android.apps.common.testing.services" />
+30-->[androidx.test:runner:1.4.0] C:\Users\tho38\.gradle\caches\transforms-3\5fbed90b113cf4e4f9fea84649ff77c0\transformed\runner-1.4.0\AndroidManifest.xml:27:9-83
+30-->[androidx.test:runner:1.4.0] C:\Users\tho38\.gradle\caches\transforms-3\5fbed90b113cf4e4f9fea84649ff77c0\transformed\runner-1.4.0\AndroidManifest.xml:27:18-80
+31    </queries>
+32
+33    <application
+33-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:5:5-24:19
+34        android:name="com.worm.MainApplication"
+34-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:6:7-38
+35        android:allowBackup="false"
+35-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:10:7-34
+36        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+36-->[androidx.core:core:1.9.0] C:\Users\tho38\.gradle\caches\transforms-3\c63a62103b867342539b62938bf9771b\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+37        android:debuggable="true"
+38        android:icon="@mipmap/ic_launcher"
+38-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:8:7-41
+39        android:label="@string/app_name"
+39-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:7:7-39
+40        android:roundIcon="@mipmap/ic_launcher_round"
+40-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:9:7-52
+41        android:theme="@style/AppTheme"
+41-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:11:7-38
+42        android:usesCleartextTraffic="true" >
+42-->C:\Users\tho38\Desktop\Wood\android\app\src\debug\AndroidManifest.xml:8:9-44
 43        <activity
-43-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:12:7-23:18
-44            android:name="com.worm.MainActivity"
-44-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:13:9-37
-45            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-45-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:15:9-118
-46            android:exported="true"
-46-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:18:9-32
-47            android:label="@string/app_name"
-47-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:14:9-41
-48            android:launchMode="singleTask"
-48-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:16:9-40
-49            android:windowSoftInputMode="adjustResize" >
-49-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:17:9-51
-50            <intent-filter>
-50-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:19:9-22:25
-51                <action android:name="android.intent.action.MAIN" />
-51-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:20:13-65
-51-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:20:21-62
-52
-53                <category android:name="android.intent.category.LAUNCHER" />
-53-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:21:13-73
-53-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:21:23-70
-54            </intent-filter>
-55        </activity> <!-- The main service, handles playback, playlists and media buttons -->
-56        <service
-56-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:9-20:19
-57            android:name="com.doublesymmetry.trackplayer.service.MusicService"
-57-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-79
-58            android:enabled="true"
-58-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-35
-59            android:exported="false" >
-59-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-37
-60            <intent-filter>
-60-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-19:29
-61                <action android:name="android.intent.action.MEDIA_BUTTON" />
-61-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:17-77
-61-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:25-74
-62            </intent-filter>
-63        </service> <!-- A receiver that will receive media buttons. Required on pre-lollipop devices -->
-64        <receiver
-64-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:23:9-29:20
-65            android:name="androidx.media.session.MediaButtonReceiver"
-65-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-70
-66            android:exported="true" >
-66-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-36
-67            <intent-filter>
-67-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-19:29
-68                <action android:name="android.intent.action.MEDIA_BUTTON" />
-68-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:17-77
-68-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:25-74
-69            </intent-filter>
-70        </receiver>
-71
-72        <provider
-72-->[androidx.emoji2:emoji2:1.0.0] C:\Users\tho38\.gradle\caches\transforms-3\9098b5419212ff6601713e861a89a2d7\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
-73            android:name="androidx.startup.InitializationProvider"
-73-->[androidx.emoji2:emoji2:1.0.0] C:\Users\tho38\.gradle\caches\transforms-3\9098b5419212ff6601713e861a89a2d7\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
-74            android:authorities="com.worm.androidx-startup"
-74-->[androidx.emoji2:emoji2:1.0.0] C:\Users\tho38\.gradle\caches\transforms-3\9098b5419212ff6601713e861a89a2d7\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
-75            android:exported="false" >
-75-->[androidx.emoji2:emoji2:1.0.0] C:\Users\tho38\.gradle\caches\transforms-3\9098b5419212ff6601713e861a89a2d7\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
-76            <meta-data
-76-->[androidx.emoji2:emoji2:1.0.0] C:\Users\tho38\.gradle\caches\transforms-3\9098b5419212ff6601713e861a89a2d7\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
-77                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-77-->[androidx.emoji2:emoji2:1.0.0] C:\Users\tho38\.gradle\caches\transforms-3\9098b5419212ff6601713e861a89a2d7\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
-78                android:value="androidx.startup" />
-78-->[androidx.emoji2:emoji2:1.0.0] C:\Users\tho38\.gradle\caches\transforms-3\9098b5419212ff6601713e861a89a2d7\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
-79            <meta-data
-79-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\tho38\.gradle\caches\transforms-3\1f3d94009a1c13047f4789dba5b458d3\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
-80                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-80-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\tho38\.gradle\caches\transforms-3\1f3d94009a1c13047f4789dba5b458d3\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
-81                android:value="androidx.startup" />
-81-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\tho38\.gradle\caches\transforms-3\1f3d94009a1c13047f4789dba5b458d3\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
-82        </provider>
-83
-84        <meta-data
-84-->[com.facebook.soloader:soloader:0.10.5] C:\Users\tho38\.gradle\caches\transforms-3\4201aca3a97f634c9516e0bda615b0b2\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:12:9-14:37
-85            android:name="com.facebook.soloader.enabled"
-85-->[com.facebook.soloader:soloader:0.10.5] C:\Users\tho38\.gradle\caches\transforms-3\4201aca3a97f634c9516e0bda615b0b2\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:13:13-57
-86            android:value="false" />
-86-->[com.facebook.soloader:soloader:0.10.5] C:\Users\tho38\.gradle\caches\transforms-3\4201aca3a97f634c9516e0bda615b0b2\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:14:13-34
-87    </application>
-88
-89</manifest>
+43-->C:\Users\tho38\Desktop\Wood\android\app\src\debug\AndroidManifest.xml:11:9-111
+44            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+44-->C:\Users\tho38\Desktop\Wood\android\app\src\debug\AndroidManifest.xml:11:19-83
+45            android:exported="false" />
+45-->C:\Users\tho38\Desktop\Wood\android\app\src\debug\AndroidManifest.xml:11:84-108
+46        <activity
+46-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:12:7-23:18
+47            android:name="com.worm.MainActivity"
+47-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:13:9-37
+48            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+48-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:15:9-118
+49            android:exported="true"
+49-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:18:9-32
+50            android:label="@string/app_name"
+50-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:14:9-41
+51            android:launchMode="singleTask"
+51-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:16:9-40
+52            android:windowSoftInputMode="adjustResize" >
+52-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:17:9-51
+53            <intent-filter>
+53-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:19:9-22:25
+54                <action android:name="android.intent.action.MAIN" />
+54-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:20:13-65
+54-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:20:21-62
+55
+56                <category android:name="android.intent.category.LAUNCHER" />
+56-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:21:13-73
+56-->C:\Users\tho38\Desktop\Wood\android\app\src\main\AndroidManifest.xml:21:23-70
+57            </intent-filter>
+58        </activity>
+59
+60        <meta-data
+60-->[:react-native-firebase_app] C:\Users\tho38\Desktop\Wood\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:9:9-11:36
+61            android:name="app_data_collection_default_enabled"
+61-->[:react-native-firebase_app] C:\Users\tho38\Desktop\Wood\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:10:13-63
+62            android:value="true" />
+62-->[:react-native-firebase_app] C:\Users\tho38\Desktop\Wood\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-33
+63
+64        <service
+64-->[:react-native-firebase_app] C:\Users\tho38\Desktop\Wood\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:9-21:19
+65            android:name="com.google.firebase.components.ComponentDiscoveryService"
+65-->[:react-native-firebase_app] C:\Users\tho38\Desktop\Wood\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-84
+66            android:directBootAware="true"
+66-->[:react-native-firebase_app] C:\Users\tho38\Desktop\Wood\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-43
+67            android:exported="false" >
+67-->[:react-native-firebase_app] C:\Users\tho38\Desktop\Wood\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-37
+68            <meta-data
+68-->[:react-native-firebase_app] C:\Users\tho38\Desktop\Wood\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-20:85
+69                android:name="com.google.firebase.components:io.invertase.firebase.app.ReactNativeFirebaseAppRegistrar"
+69-->[:react-native-firebase_app] C:\Users\tho38\Desktop\Wood\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:19:17-120
+70                android:value="com.google.firebase.components.ComponentRegistrar" />
+70-->[:react-native-firebase_app] C:\Users\tho38\Desktop\Wood\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:20:17-82
+71            <meta-data
+71-->[com.google.firebase:firebase-analytics-ktx:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\64d3e4e3a597b9680e3582f7f39e3813\transformed\jetified-firebase-analytics-ktx-21.3.0\AndroidManifest.xml:11:13-13:85
+72                android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsKtxRegistrar"
+72-->[com.google.firebase:firebase-analytics-ktx:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\64d3e4e3a597b9680e3582f7f39e3813\transformed\jetified-firebase-analytics-ktx-21.3.0\AndroidManifest.xml:12:17-126
+73                android:value="com.google.firebase.components.ComponentRegistrar" />
+73-->[com.google.firebase:firebase-analytics-ktx:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\64d3e4e3a597b9680e3582f7f39e3813\transformed\jetified-firebase-analytics-ktx-21.3.0\AndroidManifest.xml:13:17-82
+74            <meta-data
+74-->[com.google.firebase:firebase-firestore:24.8.1] C:\Users\tho38\.gradle\caches\transforms-3\f98ee9d5e4ed39ba6e4428233be80fc8\transformed\jetified-firebase-firestore-24.8.1\AndroidManifest.xml:17:13-19:85
+75                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+75-->[com.google.firebase:firebase-firestore:24.8.1] C:\Users\tho38\.gradle\caches\transforms-3\f98ee9d5e4ed39ba6e4428233be80fc8\transformed\jetified-firebase-firestore-24.8.1\AndroidManifest.xml:18:17-111
+76                android:value="com.google.firebase.components.ComponentRegistrar" />
+76-->[com.google.firebase:firebase-firestore:24.8.1] C:\Users\tho38\.gradle\caches\transforms-3\f98ee9d5e4ed39ba6e4428233be80fc8\transformed\jetified-firebase-firestore-24.8.1\AndroidManifest.xml:19:17-82
+77            <meta-data
+77-->[com.google.firebase:firebase-common-ktx:20.3.3] C:\Users\tho38\.gradle\caches\transforms-3\3a3c04d3d5b5860718bdfdf4c62f7cb7\transformed\jetified-firebase-common-ktx-20.3.3\AndroidManifest.xml:14:13-16:85
+78                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+78-->[com.google.firebase:firebase-common-ktx:20.3.3] C:\Users\tho38\.gradle\caches\transforms-3\3a3c04d3d5b5860718bdfdf4c62f7cb7\transformed\jetified-firebase-common-ktx-20.3.3\AndroidManifest.xml:15:17-113
+79                android:value="com.google.firebase.components.ComponentRegistrar" />
+79-->[com.google.firebase:firebase-common-ktx:20.3.3] C:\Users\tho38\.gradle\caches\transforms-3\3a3c04d3d5b5860718bdfdf4c62f7cb7\transformed\jetified-firebase-common-ktx-20.3.3\AndroidManifest.xml:16:17-82
+80            <meta-data
+80-->[com.google.android.gms:play-services-measurement-api:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\01877454179adc8939afa110cc166814\transformed\jetified-play-services-measurement-api-21.3.0\AndroidManifest.xml:31:13-33:85
+81                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+81-->[com.google.android.gms:play-services-measurement-api:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\01877454179adc8939afa110cc166814\transformed\jetified-play-services-measurement-api-21.3.0\AndroidManifest.xml:32:17-139
+82                android:value="com.google.firebase.components.ComponentRegistrar" />
+82-->[com.google.android.gms:play-services-measurement-api:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\01877454179adc8939afa110cc166814\transformed\jetified-play-services-measurement-api-21.3.0\AndroidManifest.xml:33:17-82
+83            <meta-data
+83-->[com.google.firebase:firebase-installations:17.1.4] C:\Users\tho38\.gradle\caches\transforms-3\19d04039d963556bb68e549befd5ede7\transformed\jetified-firebase-installations-17.1.4\AndroidManifest.xml:15:13-17:85
+84                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+84-->[com.google.firebase:firebase-installations:17.1.4] C:\Users\tho38\.gradle\caches\transforms-3\19d04039d963556bb68e549befd5ede7\transformed\jetified-firebase-installations-17.1.4\AndroidManifest.xml:16:17-127
+85                android:value="com.google.firebase.components.ComponentRegistrar" />
+85-->[com.google.firebase:firebase-installations:17.1.4] C:\Users\tho38\.gradle\caches\transforms-3\19d04039d963556bb68e549befd5ede7\transformed\jetified-firebase-installations-17.1.4\AndroidManifest.xml:17:17-82
+86        </service>
+87
+88        <provider
+88-->[:react-native-firebase_app] C:\Users\tho38\Desktop\Wood\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:23:9-27:38
+89            android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
+89-->[:react-native-firebase_app] C:\Users\tho38\Desktop\Wood\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-88
+90            android:authorities="com.worm.reactnativefirebaseappinitprovider"
+90-->[:react-native-firebase_app] C:\Users\tho38\Desktop\Wood\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-86
+91            android:exported="false"
+91-->[:react-native-firebase_app] C:\Users\tho38\Desktop\Wood\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:26:13-37
+92            android:initOrder="99" /> <!-- The main service, handles playback, playlists and media buttons -->
+92-->[:react-native-firebase_app] C:\Users\tho38\Desktop\Wood\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:27:13-35
+93        <service
+93-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:13:9-20:19
+94            android:name="com.doublesymmetry.trackplayer.service.MusicService"
+94-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-79
+95            android:enabled="true"
+95-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-35
+96            android:exported="false" >
+96-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-37
+97            <intent-filter>
+97-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-19:29
+98                <action android:name="android.intent.action.MEDIA_BUTTON" />
+98-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:17-77
+98-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:25-74
+99            </intent-filter>
+100        </service> <!-- A receiver that will receive media buttons. Required on pre-lollipop devices -->
+101        <receiver
+101-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:23:9-29:20
+102            android:name="androidx.media.session.MediaButtonReceiver"
+102-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-70
+103            android:exported="true" >
+103-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-36
+104            <intent-filter>
+104-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-19:29
+105                <action android:name="android.intent.action.MEDIA_BUTTON" />
+105-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:17-77
+105-->[:react-native-track-player] C:\Users\tho38\Desktop\Wood\node_modules\react-native-track-player\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:18:25-74
+106            </intent-filter>
+107        </receiver>
+108
+109        <provider
+109-->[com.google.firebase:firebase-common:20.3.3] C:\Users\tho38\.gradle\caches\transforms-3\60aba00666e5dfe9b49b1ff5aafe14b3\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:25:9-30:39
+110            android:name="com.google.firebase.provider.FirebaseInitProvider"
+110-->[com.google.firebase:firebase-common:20.3.3] C:\Users\tho38\.gradle\caches\transforms-3\60aba00666e5dfe9b49b1ff5aafe14b3\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:26:13-77
+111            android:authorities="com.worm.firebaseinitprovider"
+111-->[com.google.firebase:firebase-common:20.3.3] C:\Users\tho38\.gradle\caches\transforms-3\60aba00666e5dfe9b49b1ff5aafe14b3\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:27:13-72
+112            android:directBootAware="true"
+112-->[com.google.firebase:firebase-common:20.3.3] C:\Users\tho38\.gradle\caches\transforms-3\60aba00666e5dfe9b49b1ff5aafe14b3\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:28:13-43
+113            android:exported="false"
+113-->[com.google.firebase:firebase-common:20.3.3] C:\Users\tho38\.gradle\caches\transforms-3\60aba00666e5dfe9b49b1ff5aafe14b3\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:29:13-37
+114            android:initOrder="100" />
+114-->[com.google.firebase:firebase-common:20.3.3] C:\Users\tho38\.gradle\caches\transforms-3\60aba00666e5dfe9b49b1ff5aafe14b3\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:30:13-36
+115
+116        <activity
+116-->[com.google.android.gms:play-services-auth:20.6.0] C:\Users\tho38\.gradle\caches\transforms-3\fd1e9a21e70631a5c3f7ff8aa74c490b\transformed\jetified-play-services-auth-20.6.0\AndroidManifest.xml:23:9-27:75
+117            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+117-->[com.google.android.gms:play-services-auth:20.6.0] C:\Users\tho38\.gradle\caches\transforms-3\fd1e9a21e70631a5c3f7ff8aa74c490b\transformed\jetified-play-services-auth-20.6.0\AndroidManifest.xml:24:13-93
+118            android:excludeFromRecents="true"
+118-->[com.google.android.gms:play-services-auth:20.6.0] C:\Users\tho38\.gradle\caches\transforms-3\fd1e9a21e70631a5c3f7ff8aa74c490b\transformed\jetified-play-services-auth-20.6.0\AndroidManifest.xml:25:13-46
+119            android:exported="false"
+119-->[com.google.android.gms:play-services-auth:20.6.0] C:\Users\tho38\.gradle\caches\transforms-3\fd1e9a21e70631a5c3f7ff8aa74c490b\transformed\jetified-play-services-auth-20.6.0\AndroidManifest.xml:26:13-37
+120            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+120-->[com.google.android.gms:play-services-auth:20.6.0] C:\Users\tho38\.gradle\caches\transforms-3\fd1e9a21e70631a5c3f7ff8aa74c490b\transformed\jetified-play-services-auth-20.6.0\AndroidManifest.xml:27:13-72
+121        <!--
+122            Service handling Google Sign-In user revocation. For apps that do not integrate with
+123            Google Sign-In, this service will never be started.
+124        -->
+125        <service
+125-->[com.google.android.gms:play-services-auth:20.6.0] C:\Users\tho38\.gradle\caches\transforms-3\fd1e9a21e70631a5c3f7ff8aa74c490b\transformed\jetified-play-services-auth-20.6.0\AndroidManifest.xml:33:9-37:51
+126            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+126-->[com.google.android.gms:play-services-auth:20.6.0] C:\Users\tho38\.gradle\caches\transforms-3\fd1e9a21e70631a5c3f7ff8aa74c490b\transformed\jetified-play-services-auth-20.6.0\AndroidManifest.xml:34:13-89
+127            android:exported="true"
+127-->[com.google.android.gms:play-services-auth:20.6.0] C:\Users\tho38\.gradle\caches\transforms-3\fd1e9a21e70631a5c3f7ff8aa74c490b\transformed\jetified-play-services-auth-20.6.0\AndroidManifest.xml:35:13-36
+128            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+128-->[com.google.android.gms:play-services-auth:20.6.0] C:\Users\tho38\.gradle\caches\transforms-3\fd1e9a21e70631a5c3f7ff8aa74c490b\transformed\jetified-play-services-auth-20.6.0\AndroidManifest.xml:36:13-107
+129            android:visibleToInstantApps="true" />
+129-->[com.google.android.gms:play-services-auth:20.6.0] C:\Users\tho38\.gradle\caches\transforms-3\fd1e9a21e70631a5c3f7ff8aa74c490b\transformed\jetified-play-services-auth-20.6.0\AndroidManifest.xml:37:13-48
+130
+131        <activity
+131-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\tho38\.gradle\caches\transforms-3\0b9cffe8beb24e3d55e859b5bd76d724\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+132            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+132-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\tho38\.gradle\caches\transforms-3\0b9cffe8beb24e3d55e859b5bd76d724\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+133            android:exported="false"
+133-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\tho38\.gradle\caches\transforms-3\0b9cffe8beb24e3d55e859b5bd76d724\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+134            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+134-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\tho38\.gradle\caches\transforms-3\0b9cffe8beb24e3d55e859b5bd76d724\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+135
+136        <receiver
+136-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\78c719ea0d5b332151b5754ca79619bf\transformed\jetified-play-services-measurement-21.3.0\AndroidManifest.xml:29:9-33:20
+137            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+137-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\78c719ea0d5b332151b5754ca79619bf\transformed\jetified-play-services-measurement-21.3.0\AndroidManifest.xml:30:13-85
+138            android:enabled="true"
+138-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\78c719ea0d5b332151b5754ca79619bf\transformed\jetified-play-services-measurement-21.3.0\AndroidManifest.xml:31:13-35
+139            android:exported="false" >
+139-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\78c719ea0d5b332151b5754ca79619bf\transformed\jetified-play-services-measurement-21.3.0\AndroidManifest.xml:32:13-37
+140        </receiver>
+141
+142        <service
+142-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\78c719ea0d5b332151b5754ca79619bf\transformed\jetified-play-services-measurement-21.3.0\AndroidManifest.xml:35:9-38:40
+143            android:name="com.google.android.gms.measurement.AppMeasurementService"
+143-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\78c719ea0d5b332151b5754ca79619bf\transformed\jetified-play-services-measurement-21.3.0\AndroidManifest.xml:36:13-84
+144            android:enabled="true"
+144-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\78c719ea0d5b332151b5754ca79619bf\transformed\jetified-play-services-measurement-21.3.0\AndroidManifest.xml:37:13-35
+145            android:exported="false" />
+145-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\78c719ea0d5b332151b5754ca79619bf\transformed\jetified-play-services-measurement-21.3.0\AndroidManifest.xml:38:13-37
+146        <service
+146-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\78c719ea0d5b332151b5754ca79619bf\transformed\jetified-play-services-measurement-21.3.0\AndroidManifest.xml:39:9-43:72
+147            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+147-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\78c719ea0d5b332151b5754ca79619bf\transformed\jetified-play-services-measurement-21.3.0\AndroidManifest.xml:40:13-87
+148            android:enabled="true"
+148-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\78c719ea0d5b332151b5754ca79619bf\transformed\jetified-play-services-measurement-21.3.0\AndroidManifest.xml:41:13-35
+149            android:exported="false"
+149-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\78c719ea0d5b332151b5754ca79619bf\transformed\jetified-play-services-measurement-21.3.0\AndroidManifest.xml:42:13-37
+150            android:permission="android.permission.BIND_JOB_SERVICE" />
+150-->[com.google.android.gms:play-services-measurement:21.3.0] C:\Users\tho38\.gradle\caches\transforms-3\78c719ea0d5b332151b5754ca79619bf\transformed\jetified-play-services-measurement-21.3.0\AndroidManifest.xml:43:13-69
+151
+152        <meta-data
+152-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\tho38\.gradle\caches\transforms-3\a9b5f83a9308c37a20ef5be62032491b\transformed\jetified-play-services-basement-18.2.0\AndroidManifest.xml:21:9-23:69
+153            android:name="com.google.android.gms.version"
+153-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\tho38\.gradle\caches\transforms-3\a9b5f83a9308c37a20ef5be62032491b\transformed\jetified-play-services-basement-18.2.0\AndroidManifest.xml:22:13-58
+154            android:value="@integer/google_play_services_version" />
+154-->[com.google.android.gms:play-services-basement:18.2.0] C:\Users\tho38\.gradle\caches\transforms-3\a9b5f83a9308c37a20ef5be62032491b\transformed\jetified-play-services-basement-18.2.0\AndroidManifest.xml:23:13-66
+155
+156        <provider
+156-->[androidx.emoji2:emoji2:1.0.0] C:\Users\tho38\.gradle\caches\transforms-3\3cb387a8a912a2de172bd5a018d6c94b\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+157            android:name="androidx.startup.InitializationProvider"
+157-->[androidx.emoji2:emoji2:1.0.0] C:\Users\tho38\.gradle\caches\transforms-3\3cb387a8a912a2de172bd5a018d6c94b\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+158            android:authorities="com.worm.androidx-startup"
+158-->[androidx.emoji2:emoji2:1.0.0] C:\Users\tho38\.gradle\caches\transforms-3\3cb387a8a912a2de172bd5a018d6c94b\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+159            android:exported="false" >
+159-->[androidx.emoji2:emoji2:1.0.0] C:\Users\tho38\.gradle\caches\transforms-3\3cb387a8a912a2de172bd5a018d6c94b\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+160            <meta-data
+160-->[androidx.emoji2:emoji2:1.0.0] C:\Users\tho38\.gradle\caches\transforms-3\3cb387a8a912a2de172bd5a018d6c94b\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+161                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+161-->[androidx.emoji2:emoji2:1.0.0] C:\Users\tho38\.gradle\caches\transforms-3\3cb387a8a912a2de172bd5a018d6c94b\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+162                android:value="androidx.startup" />
+162-->[androidx.emoji2:emoji2:1.0.0] C:\Users\tho38\.gradle\caches\transforms-3\3cb387a8a912a2de172bd5a018d6c94b\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+163            <meta-data
+163-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\tho38\.gradle\caches\transforms-3\88145ef8cf130232f65e3df74d864d67\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+164                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+164-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\tho38\.gradle\caches\transforms-3\88145ef8cf130232f65e3df74d864d67\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+165                android:value="androidx.startup" />
+165-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\tho38\.gradle\caches\transforms-3\88145ef8cf130232f65e3df74d864d67\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+166        </provider>
+167
+168        <meta-data
+168-->[com.facebook.soloader:soloader:0.10.5] C:\Users\tho38\.gradle\caches\transforms-3\76309eda1b384d3dedff5e698bd38c87\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:12:9-14:37
+169            android:name="com.facebook.soloader.enabled"
+169-->[com.facebook.soloader:soloader:0.10.5] C:\Users\tho38\.gradle\caches\transforms-3\76309eda1b384d3dedff5e698bd38c87\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:13:13-57
+170            android:value="false" />
+170-->[com.facebook.soloader:soloader:0.10.5] C:\Users\tho38\.gradle\caches\transforms-3\76309eda1b384d3dedff5e698bd38c87\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:14:13-34
+171    </application>
+172
+173</manifest>

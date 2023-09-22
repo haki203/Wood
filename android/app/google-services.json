@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "421293673425",
+    "project_id": "worm-70d77",
+    "storage_bucket": "worm-70d77.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:421293673425:android:7dec49524bbbc7fed1aef0",
+        "android_client_info": {
+          "package_name": "com.worm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNHRRUMNzcm5Bm-Pk_wvw2C7pTjXLrtyE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

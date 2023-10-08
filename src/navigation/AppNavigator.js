@@ -3,18 +3,16 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import LoginScreen from '../components/screens/LoginScreen';
-import HomeScreen from '../components/screens/home/HomeScreen';
-import FavouriteScreen from '../components/screens/FavouriteScreen';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import PlayScreen from '../components/screens/play/PlayScreen';
 import { connect } from 'react-redux';
-import ScreenWrapper from '../components/screens/ScreenWrapper';
-import SwipeToChangeBackground from '../components/screens/SwipeToChangeBackground';
-import Detail from '../components/screens/detail/Detail';
-import HotScreen from '../components/screens/hot/HotScreen';
-import SearchBook from '../components/screens/search/SearchBook';
-import ItemListView from '../components/screens/hot/ItemListView';
+import HomeScreen from '../components/HomeScreen';
+import LoginScreen from '../components/LoginScreen';
+import HotScreen from '../components/HotScreen';
+import FavouriteScreen from '../components/FavouriteScreen';
+import LibraryScreen from '../components/LibraryScreen';
+import DetailScreen from '../components/DetailScreen';
+import SearchScreen from '../components/SearchScreen';
+
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 const Users = () => {
@@ -66,9 +64,7 @@ const Home = ({ scrollY }) => {
                 }}
             >
                 {() => (
-                    <ScreenWrapper>
-                        <Play />
-                    </ScreenWrapper>
+                    <HomeScreen />
                 )}
             </Tab.Screen>
             <Tab.Screen
@@ -81,9 +77,7 @@ const Home = ({ scrollY }) => {
                 }}
             >
                 {() => (
-                    <ScreenWrapper>
-                        <FavouriteScreen />
-                    </ScreenWrapper>
+                    <FavouriteScreen />
                 )}
             </Tab.Screen>
             <Tab.Screen
@@ -96,9 +90,7 @@ const Home = ({ scrollY }) => {
                 }}
             >
                 {() => (
-                    <ScreenWrapper>
-                            <HotScreen />
-                    </ScreenWrapper>
+                    <HotScreen />
                 )}
             </Tab.Screen>
 
@@ -112,9 +104,7 @@ const Home = ({ scrollY }) => {
                 }}
             >
                 {() => (
-                    <ScreenWrapper>
-                        <FavouriteScreen />
-                    </ScreenWrapper>
+                        <LibraryScreen />
                 )}
             </Tab.Screen>
 
@@ -133,23 +123,17 @@ const Play = () => {
         >
             <Stack.Screen name="Home">
                 {(props) => (
-                    <ScreenWrapper>
-                        <SwipeToChangeBackground navigation={props.navigation} />
-                    </ScreenWrapper>
+                    <Home/>
                 )}
             </Stack.Screen>
             <Stack.Screen name="Detail">
                 {(props) => (
-                    <ScreenWrapper>
-                        <Detail navigation={props.navigation} />
-                    </ScreenWrapper>
+                    <DetailScreen navigation={props.navigation}/>
                 )}
             </Stack.Screen>
             <Stack.Screen name="Search">
                 {(props) => (
-                    <ScreenWrapper>
-                        <SearchBook navigation={props.navigation} />
-                    </ScreenWrapper>
+                    <SearchScreen navigation={props.navigation}/>
                 )}
             </Stack.Screen>
             <Stack.Screen name="Hot">

@@ -29,21 +29,9 @@ const App = () => {
     initializeFirebase(); // Gọi hàm async ở đây
   }, []);
   return (
-    // <Provider store={store}>
-    //   <LinearGradient style={styles.container} colors={['#e6f2ff', '#cce6ff']}>
-    //     <NavigationContainer>
-    //       <AppNavigator />
-    //     </NavigationContainer>
-    //   </LinearGradient>
-    // </Provider>
-    <User />
-    // <Provider store={store}>
-    //   <ScreenWrapper >
-    //     <View  style={{flex:1,}}><ProfileInputScreen/></View>
-    //   </ScreenWrapper>
-    // </Provider>
-    //<LearnAnimation/>
-    //<MomoHeader/>
+    <NavigationContainer>
+      <AppNavigator />
+    </NavigationContainer>
   );
 };
 
